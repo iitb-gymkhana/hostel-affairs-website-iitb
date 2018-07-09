@@ -1,0 +1,33 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-sidenav',
+  templateUrl: './sidenav.component.html',
+  styleUrls: ['./sidenav.component.css']
+})
+export class SidenavComponent implements OnInit {
+  sidenavItems = [
+    { name: 'Home', link: '' },
+    { name: 'HA Council', link: '' },
+    { name: 'Cashless Campus', link: '' },
+    { name: 'Alumni Affairs', link: '' },
+    { name: 'International Relations', link: '' },
+    { name: 'Hospital', link: '' },
+    { name: 'Hospital Guidebook', link: '' },
+    { name: 'Hostels', link: '' },
+    { name: 'Lost and Found Forum', link: '' },
+    { name: 'Complaint Management System', link: '' },
+    { name: 'Guest Accoodation Booking System', link: '' },
+    { name: 'Hostel Delivery', link: '' },
+    { name: 'TumTum Schedule', link: '' },
+    { name: 'Canteen Regulations', link: '' },
+    { name: 'Tenders', link: '' },
+    { name: 'Hall Manager Duties', link: '' }
+  ]
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
