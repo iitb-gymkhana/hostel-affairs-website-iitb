@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { HaCouncilComponent } from './ha-council/ha-council.component';
 import { HaCouncilCardComponent } from './ha-council/ha-council-card/ha-council-card.component';
+import { AlumniAffairsComponent } from './alumni-affairs/alumni-affairs.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HaCouncilCardComponent } from './ha-council/ha-council-card/ha-council-
     HeaderComponent,
     HomeComponent,
     HaCouncilComponent,
-    HaCouncilCardComponent
+    HaCouncilCardComponent,
+    AlumniAffairsComponent
   ],
   imports: [
     BrowserModule,

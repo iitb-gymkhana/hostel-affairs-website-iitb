@@ -10,7 +10,7 @@ export class SidenavComponent implements OnInit {
     { name: 'Home', link: 'home' },
     { name: 'HA Council', link: 'council' },
     { name: 'Cashless Campus', link: '' },
-    { name: 'Alumni Affairs', link: '' },
+    { name: 'Alumni Affairs', link: 'alumni' },
     { name: 'International Relations', link: '' },
     { name: 'Hospital', link: '' },
     { name: 'Hospital Guidebook', link: '' },
