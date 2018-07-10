@@ -1,4 +1,4 @@
-<div class="card is-shadowless is-borderless">
+<div class="card is-shadowless">
   <div class="card-image">
     <figure class="image">
       <img src="assets/ha-council/images/18-19/{{member.image}}" alt="{{member.name}}">
@@ -7,11 +7,8 @@
   <div class="card-content">
     <div class="media">
       <div class="media-content">
-        <p class="title is-4">{{member.name}}</p>
-        <p class="subtitle is-6">
-          <a href="{{member.fb}}" class="card-footer-item">
-            <i class="fab fa-facebook-f"></i>
-          </a>
+        <p class="title is-4">
+          <a href="{{member.fb}}" target="_blank" class="has-text-primary">{{member.name}}</a>
         </p>
       </div>
     </div>
