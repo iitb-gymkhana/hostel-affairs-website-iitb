@@ -6,7 +6,7 @@
     </p>
     <ul class="menu-list">
       <li *ngFor="let item of sidenavItems">
-        <a>{{item.name}}</a>
+        <a routerLink="{{item.link}}">{{item.name}}</a>
       </li>
     </ul>
   </aside>

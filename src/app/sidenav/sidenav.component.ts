@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
   sidenavItems = [
-    { name: 'Home', link: '' },
+    { name: 'Home', link: 'home' },
     { name: 'HA Council', link: '' },
     { name: 'Cashless Campus', link: '' },
     { name: 'Alumni Affairs', link: '' },
