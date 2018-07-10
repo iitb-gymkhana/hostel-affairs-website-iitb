@@ -1,0 +1,12 @@
+<div *ngFor="let post of posts">
+  <div class="content is-small is-flex is-horizontal-center">
+    <h1>{{post.post}}</h1>
+  </div>
+  
+  <div class="columns is-horizontal-center ">
+    <div *ngFor="let member of post.members" class="column is-one-third-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+      <app-ha-council-card [member]="member"></app-ha-council-card>
+    </div>
+  </div>
+
+</div>  

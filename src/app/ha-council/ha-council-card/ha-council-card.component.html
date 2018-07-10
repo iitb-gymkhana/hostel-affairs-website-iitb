@@ -1,0 +1,45 @@
+<div class="card is-shadowless is-borderless">
+  <div class="card-image">
+    <figure class="image">
+      <img src="assets/ha-council/images/18-19/{{member.image}}" alt="{{member.name}}">
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">{{member.name}}</p>
+        <p class="subtitle is-6">
+          <a href="{{member.fb}}" class="card-footer-item">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="content">
+      <dl>
+        <dt class="has-text-weight-bold">Hostel</dt>
+        <dd class="is-marginless">{{ member.hostel }}</dd>
+      </dl>
+      <dl>
+        <dt class="has-text-weight-bold">Email</dt>
+        <dd class="is-marginless" *ngFor="let email of member.emails">{{ email }}</dd>
+      </dl>
+      <dl>
+        <dt class="has-text-weight-bold">Mobile Number</dt>
+        <dd class="is-marginless" *ngFor="let number of member.numbers">{{ number }}</dd>
+      </dl>
+    </div>
+  </div>
+
+  <footer class="card-footer">
+
+  </footer>
+</div>
+<!-- <div class="is-flex is-horizontal-center">
+  
+  <figure class="image is-128x128">
+    <img src="assets/ha-council/images/18-19/{{member.image}}" alt="{{member.name}}">
+  </figure>
+
+</div>   -->
