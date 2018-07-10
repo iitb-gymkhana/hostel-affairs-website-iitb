@@ -17,7 +17,7 @@ export class SidenavComponent implements OnInit {
     { name: 'Hostels', link: '' },
     { name: 'Lost and Found Forum', link: '' },
     { name: 'Complaint Management System', link: '' },
-    { name: 'Guest Accoodation Booking System', link: '' },
+    { name: 'Guest Accomodation Booking System', link: '' },
     { name: 'Hostel Delivery', link: '' },
     { name: 'TumTum Schedule', link: '' },
     { name: 'Canteen Regulations', link: '' },

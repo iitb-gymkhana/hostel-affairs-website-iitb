@@ -1,11 +1,8 @@
 .sidenav {
     height: 100%; 
-    width: 350px; 
-    position: fixed; 
+    width: 300px; 
+    position: absolute; 
     z-index: 1;
-    top: 0; 
-    left: 0;
-    overflow-x: hidden; 
-    padding-top: 60px; 
-    transition: 0.5s; 
+    background-color: white;
+    z-index: 35 !important; /* to make sure it stays above navbar */
 }
