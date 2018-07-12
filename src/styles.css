@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+/**
+ * These values will not show up in content, but can be 
+ * queried by JavaScript to know which breakpoint is active.
+ * Add or remove as many breakpoints as you like.
+ */
+
+ body:before {
+    content: "mobile";
+    display: none;
+    /* Prevent from displaying. */
+  }
+  
+  @media (min-width: 768px) {
+    body:before {
+      content: "tablet";
+    }
+  }
+  
+  @media (min-width: 1088px) {
+    body:before {
+      content: "desktop";
+    }
+  }
+  
