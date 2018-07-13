@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import * as $ from 'jquery';
+import * as SimpleBar from 'simplebar';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent implements OnInit, AfterViewInit {
   sidenavItems = [
     { name: 'Home', link: 'home' },
     { name: 'HA Council', link: 'council', url: '' },
@@ -31,4 +33,11 @@ export class SidenavComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngAfterViewInit() {
+    $('.sidenav-item').click(function() {
+      $('.mobile-sidenav').hide();
+      $('.navbar-burger').removeClass('is-active');
+    });
+
+  }
 }

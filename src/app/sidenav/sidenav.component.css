@@ -1,14 +1,15 @@
 .sidenav-menu {
   background-color: white;
-  padding: 25px;
   width: 25%;
-  overflow-y: auto;
-  overflow-x: hidden;
   /* to make sure it stays above navbar */
   z-index: 35 !important;
   position: fixed;
   top: 0;
   bottom: 0;
+}
+
+.menu {
+  padding: 25px;
 }
 
 @media only screen and (max-width: 1088px) {
