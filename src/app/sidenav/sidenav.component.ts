@@ -8,21 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class SidenavComponent implements OnInit {
   sidenavItems = [
     { name: 'Home', link: 'home' },
-    { name: 'HA Council', link: 'council' },
-    { name: 'Cashless Campus', link: '' },
+    { name: 'HA Council', link: 'council', url: '' },
+    { name: 'Cashless Campus', url: 'http://gymkhana.iitb.ac.in/cashlesscampus' },
     { name: 'Alumni Affairs', link: 'alumni' },
     { name: 'International Relations', link: 'ir' },
-    { name: 'Hospital', link: '' },
-    { name: 'Hospital Guidebook', link: '' },
-    { name: 'Hostels', link: '' },
-    { name: 'Lost and Found Forum', link: '' },
-    { name: 'Complaint Management System', link: '' },
-    { name: 'Guest Accomodation Booking System', link: '' },
-    { name: 'Hostel Delivery', link: '' },
-    { name: 'TumTum Schedule', link: '' },
-    { name: 'Canteen Regulations', link: '' },
-    { name: 'Tenders', link: '' },
-    { name: 'Hall Manager Duties', link: '' }
+    { name: 'Hospital', url: 'http://www.iitb.ac.in/facilities/hospital.html' },
+    { name: 'Hospital Guidebook', url: 'https://gymkhana.iitb.ac.in/~hostels/Hospital_Guidebook.pdf' },
+    { name: 'Hostels', link: 'hostels' },
+    { name: 'Lost and Found Forum', url: 'https://gymkhana.iitb.ac.in/~hostels/lostnfound.php' },
+    { name: 'Complaint Management System', url: 'http://gymkhana.iitb.ac.in/cms_new/' },
+    { name: 'Guest Accomodation Booking System', url: 'https://gymkhana.iitb.ac.in/~hostels/portal/GABS/index.php' },
+    { name: 'Guest House Booking System', url: 'http://www.iitb.ac.in/GuestHouse/index.html' },
+    { name: 'Hostel Delivery', link: 'delivery' },
+    { name: 'TumTum Schedule', url: 'https://gymkhana.iitb.ac.in/~hostels/BusSchedule1.pdf' },
+    { name: 'Canteen Regulations', url: 'https://gymkhana.iitb.ac.in/~hostels/Canteen_Regulations.pdf' },
+    { name: 'Tenders', link: 'tenders' },
+    { name: 'Hall Manager Duties', url: 'https://gymkhana.iitb.ac.in/~hostels/hallManagerDuties.html' }
   ]
 
   constructor() { }

@@ -10,6 +10,8 @@ import { HaCouncilComponent } from './ha-council/ha-council.component';
 import { HaCouncilCardComponent } from './ha-council/ha-council-card/ha-council-card.component';
 import { AlumniAffairsComponent } from './alumni-affairs/alumni-affairs.component';
 import { IrComponent } from './ir/ir.component';
+import { HostelsComponent } from './hostels/hostels.component';
+import { HostelCardComponent } from './hostels/hostel-card/hostel-card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { IrComponent } from './ir/ir.component';
     HaCouncilComponent,
     HaCouncilCardComponent,
     AlumniAffairsComponent,
-    IrComponent
+    IrComponent,
+    HostelsComponent,
+    HostelCardComponent
   ],
   imports: [
     BrowserModule,

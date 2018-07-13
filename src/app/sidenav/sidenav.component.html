@@ -6,7 +6,8 @@
     </p>
     <ul class="menu-list">
       <li *ngFor="let item of sidenavItems" class="is-size-3-fullhd is-size-6-widescreen">
-        <a routerLink="{{item.link}}">{{item.name}}</a>
+        <a routerLink="{{item.link}}" *ngIf="item.link">{{item.name}}</a>
+        <a href="{{item.url}}" *ngIf="item.url">{{item.name}}</a>
       </li>
     </ul>
   </aside>
