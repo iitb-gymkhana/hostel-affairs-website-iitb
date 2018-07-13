@@ -5,6 +5,7 @@ import { HaCouncilComponent } from './ha-council/ha-council.component';
 import { AlumniAffairsComponent } from './alumni-affairs/alumni-affairs.component';
 import { IrComponent } from './ir/ir.component';
 import { HostelsComponent } from './hostels/hostels.component';
+import { HostelDeliveryComponent } from './hostel-delivery/hostel-delivery.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'alumni', component: AlumniAffairsComponent },
   { path: 'ir', component: IrComponent },
   { path: 'hostels', component: HostelsComponent },
+  { path: 'delivery', component: HostelDeliveryComponent },
   { path: '**', redirectTo: 'home' }
 ];
 
