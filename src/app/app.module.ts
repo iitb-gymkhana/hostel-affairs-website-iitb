@@ -13,6 +13,7 @@ import { IrComponent } from './ir/ir.component';
 import { HostelsComponent } from './hostels/hostels.component';
 import { HostelCardComponent } from './hostels/hostel-card/hostel-card.component';
 import { HostelDeliveryComponent } from './hostel-delivery/hostel-delivery.component';
+import { TendersComponent } from './tenders/tenders.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HostelDeliveryComponent } from './hostel-delivery/hostel-delivery.compo
     IrComponent,
     HostelsComponent,
     HostelCardComponent,
-    HostelDeliveryComponent
+    HostelDeliveryComponent,
+    TendersComponent
   ],
   imports: [
     BrowserModule,

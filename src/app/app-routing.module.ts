@@ -6,6 +6,7 @@ import { AlumniAffairsComponent } from './alumni-affairs/alumni-affairs.componen
 import { IrComponent } from './ir/ir.component';
 import { HostelsComponent } from './hostels/hostels.component';
 import { HostelDeliveryComponent } from './hostel-delivery/hostel-delivery.component';
+import { TendersComponent } from './tenders/tenders.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'ir', component: IrComponent },
   { path: 'hostels', component: HostelsComponent },
   { path: 'delivery', component: HostelDeliveryComponent },
+  { path: 'tenders', component: TendersComponent },
   { path: '**', redirectTo: 'home' }
 ];
 
