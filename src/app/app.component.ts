@@ -9,6 +9,10 @@ import { Title } from '@angular/platform-browser';
 export class AppComponent {
   title = 'app';
 
+  onActivate(event) {
+    window.scroll(0, 0);
+  }
+
   public constructor(private titleService: Title) { }
 
   public setTitle(newTitle: string) {

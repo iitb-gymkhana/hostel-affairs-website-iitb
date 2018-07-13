@@ -13,7 +13,7 @@
 
       <main>
         <section class="section">
-          <router-outlet></router-outlet>
+          <router-outlet (activate)="onActivate($event)"></router-outlet>
         </section>
       </main>
 
