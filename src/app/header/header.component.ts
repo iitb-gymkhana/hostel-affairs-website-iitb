@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as $ from 'jquery';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,9 @@ import * as $ from 'jquery';
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  constructor(
+    public titleService: Title
+  ) { }
 
   ngOnInit() {
   }
