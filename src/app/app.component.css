@@ -15,3 +15,7 @@
 main {
   flex: 1;
 }
+
+.ha-section {
+  padding-bottom: 0;
+}

@@ -2,7 +2,7 @@
   <app-sidenav></app-sidenav>
 </div>
 
-<section class="section">
+<section class="section ha-section">
   <div class="columns">
     <div class="column is-3 sidenav">
       <app-sidenav></app-sidenav>
@@ -11,17 +11,17 @@
       <header>
         <app-header></app-header>
       </header>
-  
+
       <main>
         <section class="section">
           <router-outlet (activate)="onActivate($event)"></router-outlet>
         </section>
       </main>
+
+      <footer>
+        <app-footer></app-footer>
+      </footer>
     </div>
   </div>
 
-</section> 
-  
-<footer>
-    <app-footer></app-footer>
-  </footer>
+</section>
