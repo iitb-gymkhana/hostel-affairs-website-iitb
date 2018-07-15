@@ -15,6 +15,7 @@ import { HostelCardComponent } from './hostels/hostel-card/hostel-card.component
 import { HostelDeliveryComponent } from './hostel-delivery/hostel-delivery.component';
 import { TendersComponent } from './tenders/tenders.component';
 import { FooterComponent } from './footer/footer.component';
+import { HallManagerDutiesComponent } from './hall-manager-duties/hall-manager-duties.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FooterComponent } from './footer/footer.component';
     HostelCardComponent,
     HostelDeliveryComponent,
     TendersComponent,
-    FooterComponent
+    FooterComponent,
+    HallManagerDutiesComponent
   ],
   imports: [
     BrowserModule,
