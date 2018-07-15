@@ -39,5 +39,10 @@ export class SidenavComponent implements OnInit, AfterViewInit {
       $('.navbar-burger').removeClass('is-active');
     });
 
+    $('.mobile-sidenav-close').click(function() {
+      $('.mobile-sidenav').hide();
+      $('#navbar-burger').removeClass('is-active');
+    });
+
   }
 }

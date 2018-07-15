@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       sidenavDisplay(breakpoint['value']);
     }).resize();
 
-    $('.navbar-burger').click(function () {
+    $('#navbar-burger').click(function () {
       if ($(this).hasClass('is-active')) {
         $(this).removeClass('is-active');
         $('.mobile-sidenav').hide();
