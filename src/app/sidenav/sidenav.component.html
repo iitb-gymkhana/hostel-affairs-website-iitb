@@ -1,7 +1,7 @@
 <div data-simplebar class="sidenav-menu animated fadeInLeft">
 
   <aside class="menu">
-    <p class="menu-label is-inline is-size-3-fullhd is-size-4-widescreen">
+    <p class="menu-label is-inline">
       Hostel Affairs
     </p>
     <a role="button" class="navbar-burger mobile-sidenav-close is-pulled-right is-active" aria-label="menu" aria-expanded="false">
@@ -10,7 +10,7 @@
         <span aria-hidden="true"></span>
       </a>
     <ul class="menu-list">
-      <li *ngFor="let item of sidenavItems" class="is-size-4-fullhd is-size-6-widescreen">
+      <li *ngFor="let item of sidenavItems" class="">
         <a class="sidenav-item" routerLink="{{item.path}}" *ngIf="item.path">{{item.name}}</a>
         <a class="sidenav-item" href="{{item.url}}" *ngIf="item.url">{{item.name}}</a>
       </li>

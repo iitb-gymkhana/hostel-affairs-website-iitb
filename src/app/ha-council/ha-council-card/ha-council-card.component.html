@@ -31,28 +31,28 @@
 </div> -->
 
 <div class="columns">
-  <div class="column is-4 is-8-mobile is-5-tablet is-5-desktop is-4-widescreen is-4-fullhd">
+  <div class="column is-8-mobile is-4-tablet is-5-desktop is-3-widescreen is-2-fullhd">
     <figure class="image">
       <img src="assets/ha-council/images/18-19/{{member.image}}" alt="{{member.name}}">
     </figure>
   </div>
   <div class="column"></div>
   <div class="column is-6 is-12-mobile">
-    <div class="content">
-      <p class="title is-size-2 is-size-3-mobile is-size-4-widescreen is-size-1-fullhd">
+    <div class="content is-size-6">
+      <p class="title">
         <a href="{{member.fb}}" target="_blank" class="has-text-primary">{{member.name}}</a>
       </p>
       <dl>
-        <dt class="has-text-weight-bold is-size-4 is-size-5-mobile is-size-5-widescreen is-size-2-fullhd">Hostel</dt>
-        <dd class="is-marginless is-size-4 is-size-6-mobile is-size-5-widescreen is-size-2-fullhd">{{ member.hostel }}</dd>
+        <dt class="has-text-weight-bold">Hostel</dt>
+        <dd class="is-marginless">{{ member.hostel }}</dd>
       </dl>
       <dl>
-        <dt class="has-text-weight-bold is-size-4 is-size-5-mobile is-size-5-widescreen is-size-2-fullhd">Email</dt>
-        <dd class="is-marginless is-size-4 is-size-6-mobile is-size-5-widescreen is-size-2-fullhd" *ngFor="let email of member.emails">{{ email }}</dd>
+        <dt class="has-text-weight-bold">Email</dt>
+        <dd class="is-marginless" *ngFor="let email of member.emails">{{ email }}</dd>
       </dl>
       <dl>
-        <dt class="has-text-weight-bold is-size-4 is-size-5-mobile is-size-5-widescreen is-size-2-fullhd">Mobile Number</dt>
-        <dd class="is-marginless is-size-4 is-size-6-mobile is-size-5-widescreen is-size-2-fullhd" *ngFor="let number of member.numbers">{{ number }}</dd>
+        <dt class="has-text-weight-bold">Mobile Number</dt>
+        <dd class="is-marginless" *ngFor="let number of member.numbers">{{ number }}</dd>
       </dl>
     </div>
   </div>

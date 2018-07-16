@@ -36,7 +36,7 @@ export class SidenavComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     $('.sidenav-item').click(function() {
       $('.mobile-sidenav').hide();
-      $('.navbar-burger').removeClass('is-active');
+      $('#navbar-burger').removeClass('is-active');
     });
 
     $('.mobile-sidenav-close').click(function() {
