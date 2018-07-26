@@ -12,19 +12,23 @@
       <p class="title">
         <a href="{{hostel.url}}" target="_blank" class="has-text-primary">{{hostel.hostel}}</a>
       </p>
-      <dl>
+      <dl *ngIf="hostel.phoneNo">
         <dt class="has-text-weight-bold">Phone No.</dt>
         <dd class="is-marginless">022-2576</dd>
         <dd class="is-marginless">Security | Hall Manager</dd>
         <dd class="is-marginless">{{ hostel.phoneNo }}</dd>
       </dl>
-      <dl>
+      <dl *ngIf="hostel.gsec">
         <dt class="has-text-weight-bold">GSec</dt>
         <dd class="is-marginless">{{ hostel.gsec }}</dd>
       </dl>
-      <dl>
+      <dl *ngIf="hostel.gsecPhoneNo">
         <dt class="has-text-weight-bold">GSec's Number</dt>
         <dd class="is-marginless">{{ hostel.gsecPhoneNo }}</dd>
+      </dl>
+      <dl *ngIf="hostel.gsecEmail">
+        <dt class="has-text-weight-bold">GSec's Email</dt>
+        <dd class="is-marginless">{{ hostel.gsecEmail }}</dd>
       </dl>
     </div>
   </div>
