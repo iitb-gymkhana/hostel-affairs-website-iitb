@@ -77,12 +77,12 @@ export class HaCouncilComponent implements OnInit {
       image: 'kethan.png'
     },
     {
-      name: 'Saurabh Gupta',
-      emails: ['saurabh.gupta.17@iitb.ac.in', 'mlc@iitb.ac.in'],
-      numbers: ['9818581360'],
-      hostel: 'H16/B302',
-      fb: 'https://www.facebook.com/guptasaurabh9868',
-      image: 'saurabh.png'
+      name: 'Himanshu Upreti',
+      emails: ['reach_himanshu@iitb.ac.in', 'mlc@iitb.ac.in'],
+      numbers: ['8750211538'],
+      hostel: 'H16/B306',
+      fb: 'https://www.facebook.com/contact.himanshuu',
+      image: 'himanshu.png'
     },
     {
       name: 'Rohit Prasad',
