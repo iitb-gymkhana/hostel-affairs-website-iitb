@@ -8,6 +8,7 @@ import { HostelsComponent } from './hostels/hostels.component';
 import { HostelDeliveryComponent } from './hostel-delivery/hostel-delivery.component';
 import { TendersComponent } from './tenders/tenders.component';
 import { HallManagerDutiesComponent } from './hall-manager-duties/hall-manager-duties.component';
+import { HospitalComponent } from './hospital/hospital.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'delivery', component: HostelDeliveryComponent },
   { path: 'tenders', component: TendersComponent },
   { path: 'hallmanagerduties', component: HallManagerDutiesComponent },
+  { path: 'hospital', component: HospitalComponent },
   { path: '**', redirectTo: 'home' }
 ];
 

@@ -16,6 +16,7 @@ import { HostelDeliveryComponent } from './hostel-delivery/hostel-delivery.compo
 import { TendersComponent } from './tenders/tenders.component';
 import { FooterComponent } from './footer/footer.component';
 import { HallManagerDutiesComponent } from './hall-manager-duties/hall-manager-duties.component';
+import { HospitalComponent } from './hospital/hospital.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HallManagerDutiesComponent } from './hall-manager-duties/hall-manager-d
     HostelDeliveryComponent,
     TendersComponent,
     FooterComponent,
-    HallManagerDutiesComponent
+    HallManagerDutiesComponent,
+    HospitalComponent
   ],
   imports: [
     BrowserModule,
