@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "@fortawesome/fontawesome-free": "^5.3.1",
     "animate.css": "^3.6.1",
     "bulma": "^0.7.1",
     "bulma-carousel": "^3.0.0",
