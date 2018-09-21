@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { SEOService } from './_services/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,12 @@ export class AppComponent {
     window.scroll(0, 0);
   }
 
-  public constructor(private titleService: Title) { }
+  public constructor(
+    private titleService: Title,
+    private seoService: SEOService
+  ) {
+    seoService.addSeoData();
+   }
 
   public setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);
