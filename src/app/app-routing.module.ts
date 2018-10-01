@@ -67,17 +67,6 @@ const routes: Routes = [
     }
   },
   {
-    path: 'delivery',
-    component: HostelDeliveryComponent,
-    data: {
-      title: 'Hostel Delivery',
-      metatags: {
-        description: '',
-        keywords: 'hostel affairs, iitb'
-      }
-    }
-  },
-  {
     path: 'tenders',
     component: TendersComponent,
     data: {
