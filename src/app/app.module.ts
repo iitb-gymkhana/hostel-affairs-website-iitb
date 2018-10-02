@@ -17,6 +17,7 @@ import { TendersComponent } from './tenders/tenders.component';
 import { FooterComponent } from './footer/footer.component';
 import { HallManagerDutiesComponent } from './hall-manager-duties/hall-manager-duties.component';
 import { HospitalComponent } from './hospital/hospital.component';
+import { SustainabilityCellComponent } from './sustainability-cell/sustainability-cell.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HospitalComponent } from './hospital/hospital.component';
     TendersComponent,
     FooterComponent,
     HallManagerDutiesComponent,
-    HospitalComponent
+    HospitalComponent,
+    SustainabilityCellComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,41 @@
+<div class="content is-size-6">
+  <p>
+    Sustainability’ or ‘sustainable development’, a relatively new concept, is about providing for our current needs
+    without putting at risk our future generations, by striving for enviro-socio-economic development. It is about
+    working towards prosperity and at the same time protecting our planet. As a premier institute in the nation and an
+    Institute of Eminence, we aim to be role models for the rest of the nation into a sustainable future.
+  </p>
+  <p>
+    Sustainability is a way of life to be achieved by a combination of awareness, education, research, innovation and
+    policy and Sustainability Cell will work alongside the campus community to make IITB a beacon of sustainability.
+  </p>
+  <p>
+    We aim to: <br>
+    Spread awareness about sustainability amongst the campus community.
+    Usher in technological innovations in the institute and coordinate with various institute bodies, faculty and the
+    student community to integrate sustainable technologies into our institute.
+  </p>
+  <p>
+    Make the campus a test bed for pilot projects, involving professors and students
+    Create a platform in the institute for discussion and debates regarding various sustainability issues on and off
+    campus
+  </p>
+  <p>
+    The Sustainability Cell brings regards from a sustainable future waiting ahead.
+  </p>
+
+  <div class="is-divider" data-content=""></div>
+
+  <div *ngFor="let post of posts">
+    <div class="content is-small is-flex">
+      <h1 class="is-size-4">{{post.post}}</h1>
+    </div>
+
+    <div class="columns is-multiline">
+      <div *ngFor="let member of post.members" class="column is-12">
+        <app-ha-council-card [member]="member"></app-ha-council-card>
+      </div>
+    </div>
+    <div class="is-divider" data-content=""></div>
+  </div>
+</div>

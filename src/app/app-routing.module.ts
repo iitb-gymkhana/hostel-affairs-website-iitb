@@ -9,6 +9,7 @@ import { HostelDeliveryComponent } from './hostel-delivery/hostel-delivery.compo
 import { TendersComponent } from './tenders/tenders.component';
 import { HallManagerDutiesComponent } from './hall-manager-duties/hall-manager-duties.component';
 import { HospitalComponent } from './hospital/hospital.component';
+import { SustainabilityCellComponent } from './sustainability-cell/sustainability-cell.component';
 
 const routes: Routes = [
   {
@@ -96,6 +97,17 @@ const routes: Routes = [
       metatags: {
         description: '',
         keywords: 'hostel affairs, iitb'
+      }
+    }
+  },
+  {
+    path: 'sustainabilitycell',
+    component: SustainabilityCellComponent,
+    data: {
+      title: 'Sustainability Cell',
+      metatags: {
+        description: 'Sustainability Cell brings regards from a sustainable future waiting ahead',
+        keywords: 'sustainability cell, hostel affairs, iitb'
       }
     }
   },
