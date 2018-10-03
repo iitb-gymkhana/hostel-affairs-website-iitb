@@ -17,6 +17,7 @@ export class SidenavComponent implements OnInit, AfterViewInit {
     { name: 'Sustainability Cell', path: 'sustainabilitycell' },
     { name: 'Hostels', path: 'hostels' },
     { name: 'Guest Accomodation Booking System', url: 'https://gymkhana.iitb.ac.in/~hostels/portal/GABS/index.php' },
+    { name: 'SAC Room Booking Portal', url: 'https://gymkhana.iitb.ac.in/portal/sac' },
     { name: 'Guest House Booking System', url: 'http://www.iitb.ac.in/GuestHouse/index.html' },
     { name: 'Tenders', path: 'tenders' },
     { name: 'Hall Manager Duties', path: 'hallmanagerduties' }
