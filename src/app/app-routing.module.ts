@@ -10,6 +10,7 @@ import { TendersComponent } from './tenders/tenders.component';
 import { HallManagerDutiesComponent } from './hall-manager-duties/hall-manager-duties.component';
 import { HospitalComponent } from './hospital/hospital.component';
 import { SustainabilityCellComponent } from './sustainability-cell/sustainability-cell.component';
+import { GuestAccomodationComponent } from './guest-accomodation/guest-accomodation.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,17 @@ const routes: Routes = [
     component: HostelsComponent,
     data: {
       title: 'Hostels',
+      metatags: {
+        description: '',
+        keywords: 'hostel affairs, iitb'
+      }
+    }
+  },
+  {
+    path: 'guestaccomodation',
+    component: GuestAccomodationComponent,
+    data: {
+      title: 'Guest Accomodation',
       metatags: {
         description: '',
         keywords: 'hostel affairs, iitb'

@@ -18,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HallManagerDutiesComponent } from './hall-manager-duties/hall-manager-duties.component';
 import { HospitalComponent } from './hospital/hospital.component';
 import { SustainabilityCellComponent } from './sustainability-cell/sustainability-cell.component';
+import { GuestAccomodationComponent } from './guest-accomodation/guest-accomodation.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SustainabilityCellComponent } from './sustainability-cell/sustainabilit
     FooterComponent,
     HallManagerDutiesComponent,
     HospitalComponent,
-    SustainabilityCellComponent
+    SustainabilityCellComponent,
+    GuestAccomodationComponent
   ],
   imports: [
     BrowserModule,
