@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import mapboxgl from 'mapbox-gl';
+import * as mapboxgl from 'mapbox-gl';
 
 @Component({
   selector: 'app-hospital',
@@ -33,7 +33,8 @@ export class HospitalComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    mapboxgl.accessToken = 'pk.eyJ1Ijoicm9oaXRycCIsImEiOiJjam13cDlpbzIwbTBhM3BxdmdzenNvNmxtIn0.ROR2H-lkJ-aZh7GuMRn1jg';
+    Object.getOwnPropertyDescriptor(mapboxgl, "accessToken").set('pk.eyJ1Ijoicm9oaXRycCIsImEiOiJjam13cDlpbzIwbTBhM3BxdmdzenNvNmxtIn0.ROR2H-lkJ-aZh7GuMRn1jg');
+    // mapboxgl.accessToken = 'pk.eyJ1Ijoicm9oaXRycCIsImEiOiJjam13cDlpbzIwbTBhM3BxdmdzenNvNmxtIn0.ROR2H-lkJ-aZh7GuMRn1jg';
     var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/satellite-streets-v10',
