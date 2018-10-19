@@ -11,6 +11,7 @@ import { HallManagerDutiesComponent } from './hall-manager-duties/hall-manager-d
 import { HospitalComponent } from './hospital/hospital.component';
 import { SustainabilityCellComponent } from './sustainability-cell/sustainability-cell.component';
 import { GuestAccomodationComponent } from './guest-accomodation/guest-accomodation.component';
+import { HygieneCommitteeFoodOutletsComponent } from './hygiene-committee-food-outlets/hygiene-committee-food-outlets.component';
 
 const routes: Routes = [
   {
@@ -120,6 +121,17 @@ const routes: Routes = [
       metatags: {
         description: 'Sustainability Cell brings regards from a sustainable future waiting ahead',
         keywords: 'sustainability cell, hostel affairs, iitb'
+      }
+    }
+  },
+  {
+    path: 'hygienecommittee',
+    component: HygieneCommitteeFoodOutletsComponent,
+    data: {
+      title: 'Hygiene Committee and Food Outlets',
+      metatags: {
+        description: '',
+        keywords: 'hygiene committee, hostel affairs, iitb'
       }
     }
   },

@@ -1,0 +1,78 @@
+<div class="content is-size-6">
+  <div class="content">
+    <h3>Assigned Work to Hygiene Committee</h3>
+  </div>
+  <div class="timeline">
+    <header class="timeline-header">
+      <span class="tag is-medium is-primary is-size-4-fullhd">1</span>
+    </header>
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <p>
+          Hygiene committee has been recently established to formalize the functioning of canteens, institute outlets, messes. Hygiene committee
+        </p>
+      </div>
+    </div>
+    <header class="timeline-header">
+      <span class="tag is-medium is-primary is-size-4-fullhd">2</span>
+    </header>
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <p>
+          Holds the responsibility to conduct surprise visits in the Hostel Canteens, Hostel Messes and Institute Eateries.
+        </p>
+      </div>
+    </div>
+    <header class="timeline-header">
+      <span class="tag is-medium is-primary is-size-4-fullhd">3</span>
+    </header>
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <p>
+          During the surprise visits in the food outlets, the hygiene committee checks various parameters of the operations of the food outlet, Rules and regulations mentioned in the contract
+        </p>
+      </div>
+    </div>
+    <header class="timeline-header">
+      <span class="tag is-medium is-primary is-size-4-fullhd">4</span>
+    </header>
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <p>
+          The committee prepares ratings on various parameters of the operations.
+        </p>
+      </div>
+    </div>
+    <header class="timeline-header">
+      <span class="tag is-medium is-primary is-size-4-fullhd">5</span>
+    </header>
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <p>
+          The committee imposes fine on the caterer, if there is any violation or the operations of the food outlet are below satisfactory levels.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="is-divider" data-content=""></div>
+
+  <div *ngFor="let post of posts">
+    <div class="content is-small is-flex">
+      <h1 class="is-size-4">{{post.post}}</h1>
+    </div>
+
+    <div class="columns is-multiline">
+      <div *ngFor="let member of post.members" class="column is-12">
+        <app-ha-council-card [member]="member"></app-ha-council-card>
+      </div>
+    </div>
+    <div class="is-divider" data-content=""></div>
+  </div>
+  
+</div>
