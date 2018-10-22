@@ -11,6 +11,7 @@ import { HallManagerDutiesComponent } from './hall-manager-duties/hall-manager-d
 import { HospitalComponent } from './hospital/hospital.component';
 import { SustainabilityCellComponent } from './sustainability-cell/sustainability-cell.component';
 import { GuestAccomodationComponent } from './guest-accomodation/guest-accomodation.component';
+import { SecurityGuidelinesComponent } from './security-guidelines/security-guidelines.component';
 
 const routes: Routes = [
   {
@@ -107,7 +108,18 @@ const routes: Routes = [
     data: {
       title: 'Hospital',
       metatags: {
-        description: '',
+        description: 'IITB Hospital',
+        keywords: 'hostel affairs, iitb'
+      }
+    }
+  },
+  {
+    path: 'security',
+    component: SecurityGuidelinesComponent,
+    data: {
+      title: 'Security Guidelines',
+      metatags: {
+        description: 'Security guidelines',
         keywords: 'hostel affairs, iitb'
       }
     }
