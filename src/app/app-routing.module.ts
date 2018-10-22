@@ -13,6 +13,7 @@ import { SustainabilityCellComponent } from './sustainability-cell/sustainabilit
 import { GuestAccomodationComponent } from './guest-accomodation/guest-accomodation.component';
 import { HygieneCommitteeComponent } from './hygiene-committee/hygiene-committee.component';
 import { FoodOutletsComponent } from './food-outlets/food-outlets.component';
+import { SecurityGuidelinesComponent } from './security-guidelines/security-guidelines.component';
 
 const routes: Routes = [
   {
@@ -109,7 +110,18 @@ const routes: Routes = [
     data: {
       title: 'Hospital',
       metatags: {
-        description: '',
+        description: 'IITB Hospital',
+        keywords: 'hostel affairs, iitb'
+      }
+    }
+  },
+  {
+    path: 'security',
+    component: SecurityGuidelinesComponent,
+    data: {
+      title: 'Security Guidelines',
+      metatags: {
+        description: 'Security guidelines',
         keywords: 'hostel affairs, iitb'
       }
     }

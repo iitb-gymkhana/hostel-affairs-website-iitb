@@ -21,6 +21,7 @@ import { SustainabilityCellComponent } from './sustainability-cell/sustainabilit
 import { GuestAccomodationComponent } from './guest-accomodation/guest-accomodation.component';
 import { HygieneCommitteeComponent } from './hygiene-committee/hygiene-committee.component';
 import { FoodOutletsComponent } from './food-outlets/food-outlets.component';
+import { SecurityGuidelinesComponent } from './security-guidelines/security-guidelines.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { FoodOutletsComponent } from './food-outlets/food-outlets.component';
     SustainabilityCellComponent,
     GuestAccomodationComponent,
     HygieneCommitteeComponent,
-    FoodOutletsComponent
+    FoodOutletsComponent,
+    SecurityGuidelinesComponent
   ],
   imports: [
     BrowserModule,
