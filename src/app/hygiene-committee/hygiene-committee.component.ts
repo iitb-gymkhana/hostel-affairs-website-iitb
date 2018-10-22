@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-hygiene-committee-food-outlets',
-  templateUrl: './hygiene-committee-food-outlets.component.html',
-  styleUrls: ['./hygiene-committee-food-outlets.component.css']
+  selector: 'app-hygiene-committee',
+  templateUrl: './hygiene-committee.component.html',
+  styleUrls: ['./hygiene-committee.component.css']
 })
-export class HygieneCommitteeFoodOutletsComponent implements OnInit {
+export class HygieneCommitteeComponent implements OnInit {
   
   overallCoordinatorHygieneCommittee = [
     {

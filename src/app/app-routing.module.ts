@@ -11,7 +11,8 @@ import { HallManagerDutiesComponent } from './hall-manager-duties/hall-manager-d
 import { HospitalComponent } from './hospital/hospital.component';
 import { SustainabilityCellComponent } from './sustainability-cell/sustainability-cell.component';
 import { GuestAccomodationComponent } from './guest-accomodation/guest-accomodation.component';
-import { HygieneCommitteeFoodOutletsComponent } from './hygiene-committee-food-outlets/hygiene-committee-food-outlets.component';
+import { HygieneCommitteeComponent } from './hygiene-committee/hygiene-committee.component';
+import { FoodOutletsComponent } from './food-outlets/food-outlets.component';
 
 const routes: Routes = [
   {
@@ -126,12 +127,23 @@ const routes: Routes = [
   },
   {
     path: 'hygienecommittee',
-    component: HygieneCommitteeFoodOutletsComponent,
+    component: HygieneCommitteeComponent,
     data: {
-      title: 'Hygiene Committee and Food Outlets',
+      title: 'Hygiene Committee',
       metatags: {
         description: '',
         keywords: 'hygiene committee, hostel affairs, iitb'
+      }
+    }
+  },
+  {
+    path: 'foodoutlets',
+    component: FoodOutletsComponent,
+    data: {
+      title: 'Food Outlets',
+      metatags: {
+        description: '',
+        keywords: 'food outlets, hostel affairs, iitb'
       }
     }
   },

@@ -19,7 +19,8 @@ import { HallManagerDutiesComponent } from './hall-manager-duties/hall-manager-d
 import { HospitalComponent } from './hospital/hospital.component';
 import { SustainabilityCellComponent } from './sustainability-cell/sustainability-cell.component';
 import { GuestAccomodationComponent } from './guest-accomodation/guest-accomodation.component';
-import { HygieneCommitteeFoodOutletsComponent } from './hygiene-committee-food-outlets/hygiene-committee-food-outlets.component';
+import { HygieneCommitteeComponent } from './hygiene-committee/hygiene-committee.component';
+import { FoodOutletsComponent } from './food-outlets/food-outlets.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { HygieneCommitteeFoodOutletsComponent } from './hygiene-committee-food-o
     HospitalComponent,
     SustainabilityCellComponent,
     GuestAccomodationComponent,
-    HygieneCommitteeFoodOutletsComponent
+    HygieneCommitteeComponent,
+    FoodOutletsComponent
   ],
   imports: [
     BrowserModule,
