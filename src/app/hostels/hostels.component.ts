@@ -101,9 +101,9 @@ export class HostelsComponent implements OnInit {
     {
       hostel: 'H11',
       phoneNo: '2611 | 2711',
-      gsec: '',
-      gsecPhoneNo: '',
-      gsecEmail: '',
+      gsec: 'Tadar Sahi',
+      gsecPhoneNo: '8800627492',
+      gsecEmail: 'gsech11@iitb.ac.in',
       image: '11.jpg',
       url: 'http://gymkhana.iitb.ac.in/~hostel11/'
     },
