@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { HaCouncilComponent } from './ha-council/ha-council.component';
 import { AlumniAffairsComponent } from './alumni-affairs/alumni-affairs.component';
 import { IrComponent } from './ir/ir.component';
@@ -14,6 +16,7 @@ import { GuestAccomodationComponent } from './guest-accomodation/guest-accomodat
 import { HygieneCommitteeComponent } from './hygiene-committee/hygiene-committee.component';
 import { FoodOutletsComponent } from './food-outlets/food-outlets.component';
 import { SecurityGuidelinesComponent } from './security-guidelines/security-guidelines.component';
+import { AuthGuard } from './_guards/auth.guard'
 
 const routes: Routes = [
   {
@@ -24,6 +27,29 @@ const routes: Routes = [
       metatags: {
         description: 'A place to get all the info about hostel life at IIT Bombay',
         keywords: 'hostel affairs, iitb, homepage'
+      }
+    }
+  },
+  {
+    path: 'adminPage',
+    canActivate: [AuthGuard],
+    component: AdminComponent,
+    data: {
+      title: 'Admin',
+      metatags: {
+        description: 'admin portal for Hostel Affairs',
+        keywords: 'hostel affairs, iitb, adminpage'
+      }
+    }
+  },
+  {
+    path: 'admin',
+    component: AdminLoginComponent,
+    data: {
+      title: 'Admin Login',
+      metatags: {
+        description: 'admin portal for Hostel Affairs',
+        keywords: 'hostel affairs, iitb, adminpage'
       }
     }
   },

@@ -1,5 +1,7 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
@@ -22,6 +24,12 @@ import { GuestAccomodationComponent } from './guest-accomodation/guest-accomodat
 import { HygieneCommitteeComponent } from './hygiene-committee/hygiene-committee.component';
 import { FoodOutletsComponent } from './food-outlets/food-outlets.component';
 import { SecurityGuidelinesComponent } from './security-guidelines/security-guidelines.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { JwtInterceptor } from './_helpers/jwt.interceptor';
+import { ErrorInterceptor } from './_helpers/error.interceptor';
+import { AuthGuard } from './_guards/auth.guard'
+import { ApiService } from './_services/api.service';
 
 @NgModule({
   declarations: [
@@ -44,14 +52,23 @@ import { SecurityGuidelinesComponent } from './security-guidelines/security-guid
     GuestAccomodationComponent,
     HygieneCommitteeComponent,
     FoodOutletsComponent,
-    SecurityGuidelinesComponent
+    SecurityGuidelinesComponent,
+    AdminComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
-    Title
+    Title,
+    AuthGuard,
+    ApiService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

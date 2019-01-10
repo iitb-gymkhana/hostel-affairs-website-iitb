@@ -1,3 +1,75 @@
-<p>
-  food-outlets works!
-</p>
+<div class="card" *ngFor="let outlet of food_outlets">
+  <div class="card-header">
+    <div class="card-header-title">{{outlet.name}}</div>
+  </div> 
+  <div class="card-content">
+    <p>{{outlet.description}}</p>
+  </div>
+  <div class="card-footer">
+    <a class="card-footer-item" (click)="show_modal('menu', outlet._id)">Menu</a>
+    <a class="card-footer-item" (click)="show_modal('ratings', outlet._id)">Ratings</a>
+  </div>
+</div>
+
+
+<div class="modal" id="ratings_modal" *ngIf="display_ratings_modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Ratings</p>
+        <button class="delete" aria-label="close" (click)="close_modal()"></button>
+      </header>
+      <section class="modal-card-body">
+          <table class="table"> 
+              <tbody>
+                <tr> 
+                  <th>Visit Date</th>
+                  <th>Food Quality rating</th>
+                  <th>Operational rating</th>
+                  <th>Total rating</th>
+                </tr>
+                <tr *ngFor = "let rating of ratings">
+                  <td>{{ rating.visit_date.split("T")[0] }}</td>
+                  <td>{{ rating.food_rating }}/5</td>
+                  <td>{{ rating.operational_rating }}/5</td>
+                  <td>{{ rating.total_rating }}/5</td>
+                </tr>
+              </tbody>
+          </table>
+      </section>
+      <!-- <footer class="modal-card-foot">
+        <button class="button is-success">Save changes</button>
+        <button class="button">Cancel</button>
+      </footer> -->
+    </div>
+</div>
+
+<div class="modal" id="menu_modal" *ngIf="display_menu_modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Menu</p>
+        <button class="delete" aria-label="close" (click)="close_modal()"></button>
+      </header>
+      <section class="modal-card-body">
+          <aside class="menu">
+            <div class="menu_container" *ngFor='let key of menu_keys; index as i'>
+              <p class="menu-label">
+                {{ key }}
+              </p>
+              <ul class="menu-list">
+                <li *ngFor='let item of menu_items[i]'><a>{{ item }}</a></li>
+              </ul>
+            </div>
+          </aside>
+      </section>
+      <!-- <footer class="modal-card-foot">
+        <button class="button is-success">Save changes</button>
+        <button class="button">Cancel</button>
+      </footer> -->
+    </div>
+</div>
+
+
+
+
