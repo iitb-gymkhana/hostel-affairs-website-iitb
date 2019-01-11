@@ -1,5 +1,14 @@
-.card{
-    margin: 3%
+.grey-border{
+    border-style: solid;
+    border-color: grey
+}
+
+.zero-radius-border {
+    border-radius: 0px
+}
+
+.font-size-large{
+    font-size: large
 }
 
 /* The Modal (background) */

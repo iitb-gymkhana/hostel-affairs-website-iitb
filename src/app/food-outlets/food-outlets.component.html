@@ -1,13 +1,13 @@
-<div class="card" *ngFor="let outlet of food_outlets">
+<div class="card grey-border" *ngFor="let outlet of food_outlets">
   <div class="card-header">
-    <div class="card-header-title">{{outlet.name}}</div>
+    <div class="card-header-title font-size-large">{{outlet.name}}</div>
   </div>
   <div class="card-content">
     <p>{{outlet.description}}</p>
   </div>
   <div class="card-footer">
-    <a class="card-footer-item" (click)="show_modal('menu', outlet._id)">Menu</a>
-    <a class="card-footer-item" (click)="show_modal('ratings', outlet._id)">Ratings</a>
+    <a class="card-footer-item button is-dark zero-radius-border" (click)="show_modal('menu', outlet._id)">Menu</a>
+    <a class="card-footer-item button is-dark zero-radius-border" (click)="show_modal('ratings', outlet._id)">Ratings</a>
   </div>
 </div>
 
