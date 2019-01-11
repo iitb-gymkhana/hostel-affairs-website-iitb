@@ -21,11 +21,11 @@ app.use(bodyParser.urlencoded({ extended: false })) // parse application/x-www-f
 app.use(bodyParser.json()) // parse application/json
 
 // localhost:3003
-app.listen(3003, () => {
-  console.log("Server is up and listening on 3003...")
+app.listen(3009, () => {
+  console.log("Server is up and listening on 3009...")
 })
 
-const base_url = "http://localhost:3003/api/"
+const base_url = "/ha_website/api"
 
 //middlewares
 function verifyToken(req, res, next) {
@@ -54,7 +54,7 @@ function verifyToken(req, res, next) {
 }
 
 //user apis
-app.get('/api/users/', (req, res) => {
+app.get(base_url + '/users/', (req, res) => {
   let query = {}
   User.find(query, { 'password': 0 }, (err, data) => {
     if (err) {
@@ -68,7 +68,7 @@ app.get('/api/users/', (req, res) => {
   })
 })
 
-app.get('/api/users/:id', (req, res) => {
+app.get(base_url + '/users/:id', (req, res) => {
   let query = req.params.id
   User.findById(query, { 'password': 0 }, (err, data) => {
     if (err) {
@@ -89,7 +89,7 @@ app.get('/api/users/:id', (req, res) => {
   })
 })
 
-app.post('/api/users', (req, res) => {
+app.post(base_url + '/users', (req, res) => {
   let query = req.body
   User.create(query, (err, data) => {
     if (err) {
@@ -101,12 +101,12 @@ app.post('/api/users', (req, res) => {
     }
     res.status(201).json({
       "result": "user is saved successfully",
-      "menu_url": `${base_url}users/${data['_id']}`
+      "menu_url": `${base_url}/users/${data['_id']}`
     })
   })
 })
 
-app.post('/api/users/login', (req, res) => {
+app.post(base_url + '/users/login', (req, res) => {
   let query = req.body
   User.findOne({ 'user_id': query['user_id'] }, (err, data) => {
     if (err) {
@@ -153,7 +153,7 @@ app.post('/api/users/login', (req, res) => {
 })
 
 // menu apis
-app.get('/api/outlet_menus/:id', (req, res) => {
+app.get(base_url + '/outlet_menus/:id', (req, res) => {
   let query
   try {
     query = new ObjectId(req.params.id)
@@ -183,7 +183,7 @@ app.get('/api/outlet_menus/:id', (req, res) => {
   })
 })
 
-app.get('/api/outlets/:id/menu', (req, res) => {
+app.get(base_url + '/outlets/:id/menu', (req, res) => {
   let query
   try {
     query = new ObjectId(req.params.id)
@@ -222,7 +222,7 @@ app.get('/api/outlets/:id/menu', (req, res) => {
   })
 })
 
-app.get('/api/outlet_menus', (req, res) => {
+app.get(base_url + '/outlet_menus', (req, res) => {
   let query = {}
   FoodOutletMenu.find(query, (err, data) => {
     if (err) {
@@ -237,7 +237,7 @@ app.get('/api/outlet_menus', (req, res) => {
 })
 
 
-app.post('/api/outlet_menus',verifyToken, (req, res) => {
+app.post(base_url + '/outlet_menus',verifyToken, (req, res) => {
   let query = req.body
   FoodOutletMenu.create(query, (err, data) => {
     if (err) {
@@ -249,12 +249,12 @@ app.post('/api/outlet_menus',verifyToken, (req, res) => {
     }
     res.status(201).json({
       "result": "menu is saved successfully",
-      "menu_url": `${base_url}outlet_menus/${data['_id']}`
+      "menu_url": `${base_url}/outlet_menus/${data['_id']}`
     })
   })
 })
 
-app.put('/api/outlet_menus/',verifyToken, (req, res) => {
+app.put(base_url + '/outlet_menus/',verifyToken, (req, res) => {
   let query = req.body
   query['display_name'] = query['name']
   FoodOutletMenu.findByIdAndUpdate(query['_id'], query, { new: true }, (err, data) => {
@@ -274,12 +274,12 @@ app.put('/api/outlet_menus/',verifyToken, (req, res) => {
     }
     res.status(200).json({
       "result": "menu is edited successfully",
-      "menu_url": `${base_url}outlet_menus/${data['_id']}`
+      "menu_url": `${base_url}/outlet_menus/${data['_id']}`
     })
   })
 })
 
-app.delete('/api/outlet_menus/:id',verifyToken, (req, res) => {
+app.delete(base_url + '/outlet_menus/:id',verifyToken, (req, res) => {
   let query = req.params.id
   FoodOutletMenu.findByIdAndRemove(query, (err, data) => {
     if (err) {
@@ -305,7 +305,7 @@ app.delete('/api/outlet_menus/:id',verifyToken, (req, res) => {
 
 
 // outlet apis
-app.get('/api/outlets', (req, res) => {
+app.get(base_url + '/outlets', (req, res) => {
   let query = {}
   FoodOutlet.find(query, (err, data) => {
     if (err) {
@@ -319,7 +319,7 @@ app.get('/api/outlets', (req, res) => {
   })
 })
 
-app.get('/api/outlets/:id', (req, res) => {
+app.get(base_url + '/outlets/:id', (req, res) => {
   let query
   try {
     query = new ObjectId(req.params.id)
@@ -348,7 +348,7 @@ app.get('/api/outlets/:id', (req, res) => {
   })
 })
 
-app.post('/api/outlets',verifyToken, (req, res) => {
+app.post(base_url + '/outlets',verifyToken, (req, res) => {
   let query = req.body
   try {
     query['menu_id'] = new ObjectId(query['menu_id'])
@@ -384,13 +384,13 @@ app.post('/api/outlets',verifyToken, (req, res) => {
       }
       res.status(201).json({
         "result": "outlet is saved successfully",
-        "outlet_url": `${base_url}outlets/${data['_id']}`
+        "outlet_url": `${base_url}/outlets/${data['_id']}`
       })
     })
   })
 })
 
-app.put('/api/outlets/',verifyToken, (req, res) => {
+app.put(base_url + '/outlets/',verifyToken, (req, res) => {
   let query = req.body
   query['display_name'] = query['name']
   FoodOutlet.findByIdAndUpdate(query['_id'], query, { new: true }, (err, data) => {
@@ -410,12 +410,12 @@ app.put('/api/outlets/',verifyToken, (req, res) => {
     }
     res.status(200).json({
       "result": "outlet is edited successfully",
-      "menu_url": `${base_url}outlets/${data['_id']}`
+      "menu_url": `${base_url}/outlets/${data['_id']}`
     })
   })
 })
 
-app.delete('/api/outlets/:id',verifyToken, (req, res) => {
+app.delete(base_url + '/outlets/:id',verifyToken, (req, res) => {
   let query = req.params.id
   console.log(query)
   FoodOutlet.findByIdAndRemove(query, (err, data) => {
@@ -440,7 +440,7 @@ app.delete('/api/outlets/:id',verifyToken, (req, res) => {
 })
 
 // rating apis
-app.get('/api/outlets/:id/ratings', (req, res) => {
+app.get(base_url + '/outlets/:id/ratings', (req, res) => {
   let query
   try {
     query = { '_id': new ObjectId(req.params.id) }
@@ -479,7 +479,7 @@ app.get('/api/outlets/:id/ratings', (req, res) => {
   })
 })
 
-app.get('/api/ratings', (req, res) => {
+app.get(base_url + '/ratings', (req, res) => {
   let query = {}
   FoodOutletRating.find(query, (err, data) => {
     if (err) {
@@ -493,7 +493,7 @@ app.get('/api/ratings', (req, res) => {
   })
 })
 
-app.get('/api/ratings/:id', (req, res) => {
+app.get(base_url + '/ratings/:id', (req, res) => {
   let query
   try {
     query = new ObjectId(req.params.id)
@@ -523,7 +523,7 @@ app.get('/api/ratings/:id', (req, res) => {
   })
 })
 
-app.post('/api/ratings',verifyToken, (req, res) => {
+app.post(base_url + '/ratings',verifyToken, (req, res) => {
   let query = req.body
   try {
     query['food_outlet_id'] = new ObjectId(query['food_outlet_id'])
@@ -570,13 +570,13 @@ app.post('/api/ratings',verifyToken, (req, res) => {
       }
       res.status(201).json({
         "result": "rating is saved successfully",
-        "rating_url": `${base_url}ratings/${data['_id']}`
+        "rating_url": `${base_url}/ratings/${data['_id']}`
       })
     })
   })
 })
 
-app.put('/api/ratings/',verifyToken, (req, res) => {
+app.put(base_url + '/ratings/',verifyToken, (req, res) => {
   let query = req.body
   try {
     query['visit_date'] = new Date(query['visit_date'])
@@ -620,13 +620,13 @@ app.put('/api/ratings/',verifyToken, (req, res) => {
       console.log(`lsgonslgdklgmslk ${data}`)
       res.status(200).json({
         "result": "rating is edited successfully",
-        "menu_url": `${base_url}ratings/${data['_id']}`
+        "menu_url": `${base_url}/ratings/${data['_id']}`
       })
     })
   })
 })
 
-app.delete('/api/ratings/:id',verifyToken, (req, res) => {
+app.delete(base_url + '/ratings/:id',verifyToken, (req, res) => {
   let query = req.params.id
   FoodOutletRating.findByIdAndRemove(query, (err, data) => {
     if (err) {

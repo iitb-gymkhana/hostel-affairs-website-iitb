@@ -10,7 +10,7 @@ export class ApiService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
-  private base_url = "http://localhost:3003"
+  private base_url = "http://localhost:3009/ha_website"
 
   //auth functions
   logout_user() {
