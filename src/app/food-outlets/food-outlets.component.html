@@ -1,3 +1,13 @@
+<div class="columns">
+  <div class="column">
+    <div class="content">
+      <blockquote>These ratings are subjected to visits by hygiene committee for all food outlets in institute.
+        Hygiene
+        committee without any influence and partial bias gives these ratings and makes sure the food quality and
+        hygiene in outlets is upto mark.</blockquote>
+    </div>
+  </div>
+</div>
 <div class="card grey-border" *ngFor="let outlet of food_outlets">
   <div class="card-header">
     <div class="card-header-title font-size-large">{{outlet.name}}</div>
@@ -7,7 +17,7 @@
   </div>
   <div class="card-footer">
     <a class="card-footer-item button is-dark zero-radius-border" (click)="show_modal('menu', outlet._id)">Menu</a>
-    <a class="card-footer-item button is-dark zero-radius-border" (click)="show_modal('ratings', outlet._id)">Ratings</a>
+    <a class="card-footer-item button is-dark zero-radius-border" (click)="show_modal('ratings', outlet._id)">Visits</a>
   </div>
 </div>
 
@@ -17,7 +27,7 @@
   <div class="modal-content">
     <div class="modal-card">
       <header class="modal-card-head">
-        <p class="modal-card-title">Ratings</p>
+        <p class="modal-card-title">Visits</p>
         <button class="delete" aria-label="close" (click)="close_modal()"></button>
       </header>
       <section class="modal-card-body">
