@@ -17,7 +17,9 @@ const SECRET_KEY = process.env.SECRET_KEY
 
 app.use(morgan('combined'))
 app.use(cors())
-app.use(bodyParser.urlencoded({ extended: false })) // parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({
+  extended: false
+})) // parse application/x-www-form-urlencoded
 app.use(bodyParser.json()) // parse application/json
 
 // localhost:3003
@@ -56,7 +58,9 @@ function verifyToken(req, res, next) {
 //user apis
 app.get(base_url + '/users/', (req, res) => {
   let query = {}
-  User.find(query, { 'password': 0 }, (err, data) => {
+  User.find(query, {
+    'password': 0
+  }, (err, data) => {
     if (err) {
       console.log(`\n Failed to query users: ${err} \n`)
       res.status(500).json({
@@ -70,7 +74,9 @@ app.get(base_url + '/users/', (req, res) => {
 
 app.get(base_url + '/users/:id', (req, res) => {
   let query = req.params.id
-  User.findById(query, { 'password': 0 }, (err, data) => {
+  User.findById(query, {
+    'password': 0
+  }, (err, data) => {
     if (err) {
       console.log(`\n Failed to query user ${err} \n`)
       res.status(500).json({
@@ -108,7 +114,9 @@ app.post(base_url + '/users', (req, res) => {
 
 app.post(base_url + '/users/login', (req, res) => {
   let query = req.body
-  User.findOne({ 'user_id': query['user_id'] }, (err, data) => {
+  User.findOne({
+    'user_id': query['user_id']
+  }, (err, data) => {
     if (err) {
       console.log(`\n Failed to query user: ${err} \n`)
       res.status(500).json({
@@ -133,7 +141,9 @@ app.post(base_url + '/users/login', (req, res) => {
         return
       }
       if (isMatch) {
-        let payload = { subject: data['_id'] }
+        let payload = {
+          subject: data['_id']
+        }
         let token = jwt.sign(payload, SECRET_KEY)
         res.status(200).json({
           '_id': data['_id'],
@@ -194,7 +204,9 @@ app.get(base_url + '/outlets/:id/menu', (req, res) => {
     })
     return
   }
-  FoodOutlet.findById(query, { 'menu_id': 1 }, (err, data) => {
+  FoodOutlet.findById(query, {
+    'menu_id': 1
+  }, (err, data) => {
     if (err) {
       console.log(`\n error in mongo: ${err} \n`)
       res.status(500).json({
@@ -237,7 +249,7 @@ app.get(base_url + '/outlet_menus', (req, res) => {
 })
 
 
-app.post(base_url + '/outlet_menus',verifyToken, (req, res) => {
+app.post(base_url + '/outlet_menus', verifyToken, (req, res) => {
   let query = req.body
   FoodOutletMenu.create(query, (err, data) => {
     if (err) {
@@ -254,10 +266,12 @@ app.post(base_url + '/outlet_menus',verifyToken, (req, res) => {
   })
 })
 
-app.put(base_url + '/outlet_menus/',verifyToken, (req, res) => {
+app.put(base_url + '/outlet_menus/', verifyToken, (req, res) => {
   let query = req.body
   query['display_name'] = query['name']
-  FoodOutletMenu.findByIdAndUpdate(query['_id'], query, { new: true }, (err, data) => {
+  FoodOutletMenu.findByIdAndUpdate(query['_id'], query, {
+    new: true
+  }, (err, data) => {
     if (err) {
       console.log(`\n Failed to edit menu: ${err} \n`)
       res.status(500).json({
@@ -279,7 +293,7 @@ app.put(base_url + '/outlet_menus/',verifyToken, (req, res) => {
   })
 })
 
-app.delete(base_url + '/outlet_menus/:id',verifyToken, (req, res) => {
+app.delete(base_url + '/outlet_menus/:id', verifyToken, (req, res) => {
   let query = req.params.id
   FoodOutletMenu.findByIdAndRemove(query, (err, data) => {
     if (err) {
@@ -302,12 +316,16 @@ app.delete(base_url + '/outlet_menus/:id',verifyToken, (req, res) => {
   })
 })
 
+async function getLastVistRating(food_outlet_id) {
 
+
+  return ratings[0];
+}
 
 // outlet apis
-app.get(base_url + '/outlets', (req, res) => {
+app.get(base_url + '/outlets', async (req, res) => {
   let query = {}
-  FoodOutlet.find(query, (err, data) => {
+  FoodOutlet.find(query).lean().exec(async (err, data) => {
     if (err) {
       console.log(`Failed to query outlets from food_oulets collection: ${err}`)
       res.status(500).json({
@@ -315,7 +333,21 @@ app.get(base_url + '/outlets', (req, res) => {
       })
       return
     }
-    res.status(200).json(data)
+
+    for (let i = 0; i < data.length; i++) {
+      const ratings = await FoodOutletRating.find({
+          'food_outlet_id': data[i]._id
+        })
+        .sort({
+          visit_date: -1
+        })
+        .lean()
+
+      data[i].last_visit = ratings[0];
+    }
+    
+    res.status(200).json(data);
+
   })
 })
 
@@ -334,7 +366,10 @@ app.get(base_url + '/outlets/:id', (req, res) => {
     if (err) {
       console.log("Failed to query outlets from food_oulets collection" + err)
       res.sendStatus(500)
-      res.json({ "status": 500, "error": err })
+      res.json({
+        "status": 500,
+        "error": err
+      })
       return
     }
     if (!data) {
@@ -348,7 +383,7 @@ app.get(base_url + '/outlets/:id', (req, res) => {
   })
 })
 
-app.post(base_url + '/outlets',verifyToken, (req, res) => {
+app.post(base_url + '/outlets', verifyToken, (req, res) => {
   let query = req.body
   try {
     query['menu_id'] = new ObjectId(query['menu_id'])
@@ -359,7 +394,11 @@ app.post(base_url + '/outlets',verifyToken, (req, res) => {
     })
     return
   }
-  FoodOutletMenu.find({ '_id': query['menu_id'] }, { '_id': 1 }, (err, data) => {
+  FoodOutletMenu.find({
+    '_id': query['menu_id']
+  }, {
+    '_id': 1
+  }, (err, data) => {
     if (err) {
       console.log(`\n error in mongo: ${err} \n`)
       res.status(500).json({
@@ -390,10 +429,12 @@ app.post(base_url + '/outlets',verifyToken, (req, res) => {
   })
 })
 
-app.put(base_url + '/outlets/',verifyToken, (req, res) => {
+app.put(base_url + '/outlets/', verifyToken, (req, res) => {
   let query = req.body
   query['display_name'] = query['name']
-  FoodOutlet.findByIdAndUpdate(query['_id'], query, { new: true }, (err, data) => {
+  FoodOutlet.findByIdAndUpdate(query['_id'], query, {
+    new: true
+  }, (err, data) => {
     if (err) {
       console.log(`\n Failed to edit outlet: ${err} \n`)
       res.status(500).json({
@@ -415,7 +456,7 @@ app.put(base_url + '/outlets/',verifyToken, (req, res) => {
   })
 })
 
-app.delete(base_url + '/outlets/:id',verifyToken, (req, res) => {
+app.delete(base_url + '/outlets/:id', verifyToken, (req, res) => {
   let query = req.params.id
   console.log(query)
   FoodOutlet.findByIdAndRemove(query, (err, data) => {
@@ -443,7 +484,9 @@ app.delete(base_url + '/outlets/:id',verifyToken, (req, res) => {
 app.get(base_url + '/outlets/:id/ratings', (req, res) => {
   let query
   try {
-    query = { '_id': new ObjectId(req.params.id) }
+    query = {
+      '_id': new ObjectId(req.params.id)
+    }
   } catch (err) {
     console.log(`\n error in parsing outlet id: ${err.message} \n`)
     res.status(400).json({
@@ -466,7 +509,9 @@ app.get(base_url + '/outlets/:id/ratings', (req, res) => {
       })
       return
     }
-    FoodOutletRating.find({ 'food_outlet_id': query['_id'] }, (err, data) => {
+    FoodOutletRating.find({
+      'food_outlet_id': query['_id']
+    }, (err, data) => {
       if (err) {
         console.log(`Failed to query ratings: ${err}`)
         res.status(500).json({
@@ -523,7 +568,7 @@ app.get(base_url + '/ratings/:id', (req, res) => {
   })
 })
 
-app.post(base_url + '/ratings',verifyToken, (req, res) => {
+app.post(base_url + '/ratings', verifyToken, (req, res) => {
   let query = req.body
   try {
     query['food_outlet_id'] = new ObjectId(query['food_outlet_id'])
@@ -544,11 +589,16 @@ app.post(base_url + '/ratings',verifyToken, (req, res) => {
     })
     return
   }
-  FoodOutlet.find({ '_id': query['food_outlet_id'] }, (err, data) => {
+  FoodOutlet.find({
+    '_id': query['food_outlet_id']
+  }, (err, data) => {
     if (err) {
       console.log(`\n error in mongo: ${err}\n`)
       res.sendStatus(500)
-      res.json({ "status": 500, "error": err })
+      res.json({
+        "status": 500,
+        "error": err
+      })
       return
     }
     if (data.length === 0) {
@@ -576,7 +626,7 @@ app.post(base_url + '/ratings',verifyToken, (req, res) => {
   })
 })
 
-app.put(base_url + '/ratings/',verifyToken, (req, res) => {
+app.put(base_url + '/ratings/', verifyToken, (req, res) => {
   let query = req.body
   try {
     query['visit_date'] = new Date(query['visit_date'])
@@ -587,10 +637,14 @@ app.put(base_url + '/ratings/',verifyToken, (req, res) => {
     })
     return
   }
-  FoodOutlet.find({ '_id': query['food_outlet_id'] }, (err, data) => {
+  FoodOutlet.find({
+    '_id': query['food_outlet_id']
+  }, (err, data) => {
     if (err) {
       console.log(`\n error in mongo: ${err}\n`)
-      res.send(500).json({ "error": `\n error in mongo: ${err}\n` })
+      res.send(500).json({
+        "error": `\n error in mongo: ${err}\n`
+      })
       return
     }
     if (data.length === 0) {
@@ -602,7 +656,9 @@ app.put(base_url + '/ratings/',verifyToken, (req, res) => {
     }
     query['display_name'] = `${query['visit_date'].toISOString().split('T')[0]} ${data[0].name}`
 
-    FoodOutletRating.findByIdAndUpdate(query['_id'], query, { new: true }, (err, data) => {
+    FoodOutletRating.findByIdAndUpdate(query['_id'], query, {
+      new: true
+    }, (err, data) => {
       if (err) {
         console.log(`\n Failed to edit rating: ${err} \n`)
         res.status(500).json({
@@ -626,7 +682,7 @@ app.put(base_url + '/ratings/',verifyToken, (req, res) => {
   })
 })
 
-app.delete(base_url + '/ratings/:id',verifyToken, (req, res) => {
+app.delete(base_url + '/ratings/:id', verifyToken, (req, res) => {
   let query = req.params.id
   FoodOutletRating.findByIdAndRemove(query, (err, data) => {
     if (err) {
@@ -648,7 +704,3 @@ app.delete(base_url + '/ratings/:id',verifyToken, (req, res) => {
     })
   })
 })
-
-
-
-

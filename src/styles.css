@@ -3,6 +3,7 @@
  * queried by JavaScript to know which breakpoint is active.
  * Add or remove as many breakpoints as you like.
  */
+@import '~css-star-rating/css/star-rating.min.css';
 
  body:before {
     content: "mobile";

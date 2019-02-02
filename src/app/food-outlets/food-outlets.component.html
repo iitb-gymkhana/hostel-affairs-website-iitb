@@ -13,7 +13,7 @@
     <div class="card-header-title font-size-large">{{outlet.name}}</div>
   </div>
   <div class="card-content">
-    <p>{{outlet.description}}</p>
+    <star-rating [starType]="'svg'" [rating]="outlet.last_visit ? outlet.last_visit.total_rating : 0" labelText="Overall Rating" [readOnly]="true"></star-rating>
   </div>
   <div class="card-footer">
     <a class="card-footer-item button is-dark zero-radius-border" (click)="show_modal('menu', outlet._id)">Menu</a>
