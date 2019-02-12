@@ -65,7 +65,7 @@ export class HygieneCommitteeComponent implements OnInit {
       numbers: ['9488659155'],
       hostel: '',
       fb: '',
-      image: 'kotha_vishal.jpg'
+      image: 'kotha_vishal.png'
     },
     {
       name: 'Sanyam Chouksey',
