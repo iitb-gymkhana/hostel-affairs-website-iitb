@@ -178,7 +178,7 @@ const routes: Routes = [
     path: 'foodoutlets',
     component: FoodOutletsComponent,
     data: {
-      title: 'Food Outlets',
+      title: 'Food Outlet Ratings',
       metatags: {
         description: '',
         keywords: 'food outlets, hostel affairs, iitb'
