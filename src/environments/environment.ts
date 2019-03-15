@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   apiBaseUrl: 'http://localhost:3009/ha_website/api',
+  eshuttleSchedule: 'https://cors-anywhere.herokuapp.com/https://gymkhana.iitb.ac.in/~hostels/eshuttle_schedule_2019.pdf'
 };
 
 /*

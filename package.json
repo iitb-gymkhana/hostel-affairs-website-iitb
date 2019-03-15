@@ -32,6 +32,7 @@
     "css-star-rating": "^1.2.4",
     "jquery": "^3.3.1",
     "mapbox-gl": "^0.48.0",
+    "ng2-pdf-viewer": "^5.2.3",
     "rxjs": "^6.0.0",
     "simplebar": "^2.6.1",
     "zone.js": "^0.8.26"

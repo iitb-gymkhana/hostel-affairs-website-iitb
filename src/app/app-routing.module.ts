@@ -8,6 +8,7 @@ import { AlumniAffairsComponent } from './alumni-affairs/alumni-affairs.componen
 import { IrComponent } from './ir/ir.component';
 import { HostelsComponent } from './hostels/hostels.component';
 import { HostelDeliveryComponent } from './hostel-delivery/hostel-delivery.component';
+import { EshuttleComponent } from './eshuttle/eshuttle.component';
 import { TendersComponent } from './tenders/tenders.component';
 import { HallManagerDutiesComponent } from './hall-manager-duties/hall-manager-duties.component';
 import { HospitalComponent } from './hospital/hospital.component';
@@ -182,6 +183,17 @@ const routes: Routes = [
       metatags: {
         description: '',
         keywords: 'food outlets, hostel affairs, iitb'
+      }
+    }
+  },
+  {
+    path: 'eshuttleschedule',
+    component: EshuttleComponent,
+    data: {
+      title: 'E-Shuttle Schedule',
+      metatags: {
+        description: '',
+        keywords: 'eshuttle schedule, hostel affairs, iitb'
       }
     }
   },

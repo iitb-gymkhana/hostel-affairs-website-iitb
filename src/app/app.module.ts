@@ -31,6 +31,8 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { AuthGuard } from './_guards/auth.guard'
 import { ApiService } from './_services/api.service';
 import { StarRatingModule } from 'angular-star-rating';
+import { EshuttleComponent } from './eshuttle/eshuttle.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import { StarRatingModule } from 'angular-star-rating';
     FoodOutletsComponent,
     SecurityGuidelinesComponent,
     AdminComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    EshuttleComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,8 @@ import { StarRatingModule } from 'angular-star-rating';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    StarRatingModule.forRoot()
+    StarRatingModule.forRoot(),
+    PdfViewerModule
   ],
   providers: [
     Title,
