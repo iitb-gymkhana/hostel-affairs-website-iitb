@@ -1,7 +1,9 @@
-<pdf-viewer 
-  [src]="scheduleUrl" 
-  [render-text]="true" 
-  [autoresize]="true"
-  [original-size]="false"
-  style="display: block;">
-</pdf-viewer>
+<ng-progress id="progress-bar"></ng-progress>
+<div class="columns is-centered">
+
+  <div class="column is-10">
+    <figure class="image is-3by2">
+      <img src="{{scheduleUrl}}" (load)="progressBar.complete()">
+    </figure>
+  </div>
+</div>
