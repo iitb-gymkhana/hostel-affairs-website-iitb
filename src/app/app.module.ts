@@ -32,7 +32,8 @@ import { AuthGuard } from './_guards/auth.guard'
 import { ApiService } from './_services/api.service';
 import { StarRatingModule } from 'angular-star-rating';
 import { EshuttleComponent } from './eshuttle/eshuttle.component';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { NgHttpLoaderModule } from 'ng-http-loader';
+import { NgProgressModule } from '@ngx-progressbar/core';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     FormsModule,
     ReactiveFormsModule,
     StarRatingModule.forRoot(),
-    PdfViewerModule
+    NgHttpLoaderModule.forRoot(),
+    NgProgressModule
   ],
   providers: [
     Title,
