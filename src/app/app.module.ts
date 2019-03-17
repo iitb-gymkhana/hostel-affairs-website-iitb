@@ -35,6 +35,7 @@ import { EshuttleComponent } from './eshuttle/eshuttle.component';
 import { NgHttpLoaderModule } from 'ng-http-loader';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { GulmoharDashboardComponent } from './admin/gulmohar-dashboard/gulmohar-dashboard.component';
+import { GulmoharMenuComponent } from './gulmohar-menu/gulmohar-menu.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { GulmoharDashboardComponent } from './admin/gulmohar-dashboard/gulmohar-
     AdminComponent,
     AdminLoginComponent,
     EshuttleComponent,
-    GulmoharDashboardComponent
+    GulmoharDashboardComponent,
+    GulmoharMenuComponent,
   ],
   imports: [
     BrowserModule,
