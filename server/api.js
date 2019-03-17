@@ -13,12 +13,23 @@ const FoodOutletMenu = models.FoodOutletMenu
 const FoodOutletRating = models.FoodOutletRating
 const User = models.User
 const ObjectId = mongo.ObjectID
+
+// Gulmohar Menu 
+const GulmoharMenu = models.GulmoharMenu
+const GulmoharMenuImage =  models.GulmoharMenuImage
+const multer = require('multer');
+const fs = require('fs');
+const path =  require('path');
+// Install multer 
+
+
+
 const SECRET_KEY = process.env.SECRET_KEY
 
 app.use(morgan('combined'))
 app.use(cors())
 app.use(bodyParser.urlencoded({
-  extended: false
+  extended: true
 })) // parse application/x-www-form-urlencoded
 app.use(bodyParser.json()) // parse application/json
 
@@ -72,6 +83,7 @@ app.get(base_url + '/users/', (req, res) => {
   })
 })
 
+
 app.get(base_url + '/users/:id', (req, res) => {
   let query = req.params.id
   User.findById(query, {
@@ -94,6 +106,7 @@ app.get(base_url + '/users/:id', (req, res) => {
     res.status(200).json(data)
   })
 })
+
 
 app.post(base_url + '/users', (req, res) => {
   let query = req.body
@@ -247,6 +260,8 @@ app.get(base_url + '/outlet_menus', (req, res) => {
     res.status(200).json(data)
   })
 })
+
+
 
 
 app.post(base_url + '/outlet_menus', verifyToken, (req, res) => {
@@ -704,3 +719,240 @@ app.delete(base_url + '/ratings/:id', verifyToken, (req, res) => {
     })
   })
 })
+
+
+
+// gulmohar menu apis
+
+app.post(base_url + '/menu/gulmohar/', verifyToken, (req, res) => {
+  
+  if(!req.body.menu || !req.body.category) {
+    return res.status(400).send({
+        message: "Note content can not be empty"
+    });
+  }
+  
+  const menuitem = new GulmoharMenu(
+    {
+      'menu':req.body.menu,
+      'category' : req.body.category,
+    }
+  );
+
+  menuitem.save()
+  
+  res.json({
+    success: true
+  });
+})
+
+
+app.get(base_url + '/menu/gulmohar', verifyToken, (req, res) => {
+  let query = {}
+  GulmoharMenu.find(query, (err, data) => {
+    if (err) {
+      console.log(`\n Failed to query menuitems: ${err} \n`)
+      res.status(500).json({
+        "error": `Failed to query menuitems: ${err}`
+      })
+      return
+    }
+    res.status(200).json(data)
+  })
+})
+
+
+app.get(base_url + '/menu/gulmohar/:id', (req, res) => {
+  let query = req.params.id
+  GulmoharMenu.findById(query, (err, data) => {
+    if (err) {
+      res.sendStatus(500)
+      res.json({
+        "status": 500,
+        "error": err
+      })
+      return
+    }
+    if (!data) {
+      res.status(404).json({
+        "error": `outlet with the id: ${query} does not exists`
+      })
+      return
+    }
+    res.status(200).json(data)
+  })
+})
+
+
+app.put(base_url+'/menu/gulmohar/:id',verifyToken,(req,res) => {
+  let query = req.body
+  GulmoharMenu.findByIdAndUpdate(req.params.id, query, {
+    new: true
+  }, (err, data) => {
+    if (err) {
+      res.status(500).json({
+        "error": `Failed to edit menuitem: ${err}`
+      })
+      return
+    }
+    if (!data) {
+      res.status(400).json({
+        "error": `Failed to find menuitem with id: ${query['_id']}`
+      })
+      return
+    }
+    res.status(200).json({
+      "result": "menuitem is edited successfully",
+      "menu_url": `${base_url}/gulmohar_menuitem/${data['_id']}`
+    })
+  })
+
+})
+
+
+app.delete(base_url+'/menu/gulmohar/:id', verifyToken,(req,res) => {
+  let query = req.params.id
+  GulmoharMenu.findByIdAndRemove(query, (err, data) => {
+    if (err) {
+      res.status(500).json({
+        "error": `Failed to delete menuitem: ${err}`
+      })
+      return
+    }
+    if (!data) {
+      res.status(400).json({
+        "error": `Failed to find menuitem with id: ${query}`
+      })
+      return
+    }
+    res.status(200).json({
+      "result": "menuitem is deleted successfully"
+    })
+  })
+})
+
+// gulmohar menu image api
+
+// app.post(base_url+'/gulmohar_addimage',verifyToken, (req,res) => {
+//   var newImage = new GulmoharMenuImage();
+//   newImage.img.data = fs.readFileSync(req.files.userPhoto.path)
+//   newImage.img.contentType = 'image/png';
+//   newImage.save()
+//     .then(newImage => {
+//       console.log("menu Item added succesfully");
+//       res.json('Item added successfully')
+//     })
+//     .catch( err => {
+//       console.log("not saved");
+//       res.status(400).send("Unable to save item");
+//     });
+// })
+
+// app.get(base_url+'/gulmohar_getimage',verifyToken, (req,res) => {
+
+// })
+var DIR = './uploads/';
+ 
+var upload = multer({dest: DIR});
+ 
+// app.use(function (req, res, next) {
+//   // res.setHeader('Access-Control-Allow-Origin', 'http://valor-software.github.io');
+//   res.setHeader('Access-Control-Allow-Methods', 'POST');
+//   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+//   res.setHeader('Access-Control-Allow-Credentials', true);
+//   next();
+// });
+ 
+// app.use(multer({
+//   dest: DIR,
+//   rename: function (fieldname, filename) {
+//     return filename + Date.now();
+//   },
+//   onFileUploadStart: function (file) {
+//     console.log(file.originalname + ' is starting ...');
+//   },
+//   onFileUploadComplete: function (file) {
+//     console.log(file.fieldname + ' uploaded to  ' + file.path);
+//   }
+// }
+
+// ),next());
+ 
+app.get(base_url+'/menu/poster/gulmohar', function (req, res) {
+  // res.end('file catcher example');
+
+  GulmoharMenuImage.findOne(
+    {
+      restraunt:"gulmohar"
+    }, 
+   (err,image) => {
+      if (err)
+      {
+        res.json({"error":err})
+      }
+
+      res.setHeader('Content-Type','image/*');
+
+      fs.createReadStream(path.join(DIR, image.filename)).pipe(res)
+
+      // res.sendFile(data)
+    }
+  )
+  
+
+  
+  
+});
+ 
+// app.post('/menu/gulmohar/poster', function (req, res) {
+//   upload(req, res, function (err) {
+//     if (err) {
+//       return res.end(err.toString());
+//     }
+
+    
+//     const image = GulmoharMenuImage.findOneAndUpdate(
+//       {
+//         restraunt:"gulmohar"
+
+//       },
+//       {
+//         filename:req.file.filename
+//       },
+//       {
+//         upsert:true,
+//         new:true,
+//         setDefaultsOnInsert:true
+//       }
+//     )
+
+ 
+//     res.end('File is uploaded');
+//   });
+// });
+
+app.post(base_url+'/menu/poster/gulmohar', upload.single('poster'), async function (req, res, next) {
+  // req.file is the `avatar` file
+  // req.body will hold the text fields, if there were any
+
+
+  const image = await GulmoharMenuImage.findOneAndUpdate(
+          {
+            restraunt:"gulmohar"
+    
+          },
+          {
+            filename:req.file.filename
+          },
+          {
+            upsert:true,
+            new:true,
+            setDefaultsOnInsert:true
+          }
+        )
+    
+    // console.log(image)
+
+    res.end('File is uploaded');
+  
+});
