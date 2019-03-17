@@ -748,7 +748,7 @@ app.post(base_url + '/menu/gulmohar/', verifyToken, (req, res) => {
 })
 
 
-app.get(base_url + '/menu/gulmohar', verifyToken, (req, res) => {
+app.get(base_url + '/menu/gulmohar', (req, res) => {
   let query = {}
   GulmoharMenu.find(query, (err, data) => {
     if (err) {
