@@ -865,7 +865,28 @@ app.get(base_url + '/menu/poster/gulmohar', function (req, res, next) {
 
 });
 
+app.delete(base_url+'/menu/poster/gulmohar',async function(req,res,next){
+  
+  const image = await GulmoharMenuImage.findOneAndUpdate(
+    {
+      restraunt: "gulmohar"
 
+    },
+    {
+      filename: ""
+    },
+    {
+      upsert: true,
+      new: true,
+      setDefaultsOnInsert: true
+    }
+  )
+
+  res.status(200).json({
+    "result": "file deleted"
+  })
+
+})
 
 app.post(base_url + '/menu/poster/gulmohar', upload.single('poster'), async function (req, res, next) {
 
