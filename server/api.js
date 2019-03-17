@@ -16,10 +16,10 @@ const ObjectId = mongo.ObjectID
 
 // Gulmohar Menu 
 const GulmoharMenu = models.GulmoharMenu
-const GulmoharMenuImage =  models.GulmoharMenuImage
+const GulmoharMenuImage = models.GulmoharMenuImage
 const multer = require('multer');
 const fs = require('fs');
-const path =  require('path');
+const path = require('path');
 // Install multer 
 
 
@@ -156,7 +156,7 @@ app.post(base_url + '/users/login', (req, res) => {
       if (isMatch) {
         let payload = {
           subject: data['_id'],
-          user_id:data['user_id']
+          user_id: data['user_id']
         }
         let token = jwt.sign(payload, SECRET_KEY)
         res.status(200).json({
@@ -352,8 +352,8 @@ app.get(base_url + '/outlets', async (req, res) => {
 
     for (let i = 0; i < data.length; i++) {
       const ratings = await FoodOutletRating.find({
-          'food_outlet_id': data[i]._id
-        })
+        'food_outlet_id': data[i]._id
+      })
         .sort({
           visit_date: -1
         })
@@ -361,7 +361,7 @@ app.get(base_url + '/outlets', async (req, res) => {
 
       data[i].last_visit = ratings[0];
     }
-    
+
     res.status(200).json(data);
 
   })
@@ -413,36 +413,36 @@ app.post(base_url + '/outlets', verifyToken, (req, res) => {
   FoodOutletMenu.find({
     '_id': query['menu_id']
   }, {
-    '_id': 1
-  }, (err, data) => {
-    if (err) {
-      console.log(`\n error in mongo: ${err} \n`)
-      res.status(500).json({
-        "error": `error in mongo: ${err}`
-      })
-      return
-    }
-    if (data.length === 0) {
-      console.log(`\n no menu found with the id: ${query['menu_id']} \n`)
-      res.status(400).json({
-        "error": `no menu found with the id: ${query['menu_id']}`
-      })
-      return
-    }
-    FoodOutlet.create(query, (err, data) => {
+      '_id': 1
+    }, (err, data) => {
       if (err) {
-        console.log(`\n Failed to insert documents: ${err} \n`)
+        console.log(`\n error in mongo: ${err} \n`)
         res.status(500).json({
-          "error": `Failed to insert documents: ${err}`
+          "error": `error in mongo: ${err}`
         })
         return
       }
-      res.status(201).json({
-        "result": "outlet is saved successfully",
-        "outlet_url": `${base_url}/outlets/${data['_id']}`
+      if (data.length === 0) {
+        console.log(`\n no menu found with the id: ${query['menu_id']} \n`)
+        res.status(400).json({
+          "error": `no menu found with the id: ${query['menu_id']}`
+        })
+        return
+      }
+      FoodOutlet.create(query, (err, data) => {
+        if (err) {
+          console.log(`\n Failed to insert documents: ${err} \n`)
+          res.status(500).json({
+            "error": `Failed to insert documents: ${err}`
+          })
+          return
+        }
+        res.status(201).json({
+          "result": "outlet is saved successfully",
+          "outlet_url": `${base_url}/outlets/${data['_id']}`
+        })
       })
     })
-  })
 })
 
 app.put(base_url + '/outlets/', verifyToken, (req, res) => {
@@ -726,22 +726,22 @@ app.delete(base_url + '/ratings/:id', verifyToken, (req, res) => {
 // gulmohar menu apis
 
 app.post(base_url + '/menu/gulmohar/', verifyToken, (req, res) => {
-  
-  if(!req.body.menu || !req.body.category) {
+
+  if (!req.body.menu || !req.body.category) {
     return res.status(400).send({
-        message: "Note content can not be empty"
+      message: "Note content can not be empty"
     });
   }
-  
+
   const menuitem = new GulmoharMenu(
     {
-      'menu':req.body.menu,
-      'category' : req.body.category,
+      'menu': req.body.menu,
+      'category': req.body.category,
     }
   );
 
   menuitem.save()
-  
+
   res.json({
     success: true
   });
@@ -785,7 +785,7 @@ app.get(base_url + '/menu/gulmohar/:id', (req, res) => {
 })
 
 
-app.put(base_url+'/menu/gulmohar/:id',verifyToken,(req,res) => {
+app.put(base_url + '/menu/gulmohar/:id', verifyToken, (req, res) => {
   let query = req.body
   GulmoharMenu.findByIdAndUpdate(req.params.id, query, {
     new: true
@@ -811,7 +811,7 @@ app.put(base_url+'/menu/gulmohar/:id',verifyToken,(req,res) => {
 })
 
 
-app.delete(base_url+'/menu/gulmohar/:id', verifyToken,(req,res) => {
+app.delete(base_url + '/menu/gulmohar/:id', verifyToken, (req, res) => {
   let query = req.params.id
   GulmoharMenu.findByIdAndRemove(query, (err, data) => {
     if (err) {
@@ -834,65 +834,60 @@ app.delete(base_url+'/menu/gulmohar/:id', verifyToken,(req,res) => {
 
 // gulmohar menu image api
 
-
 var DIR = './uploads/';
- 
-var upload = multer({dest: DIR});
- 
 
- 
-app.get(base_url+'/menu/poster/gulmohar', function (req, res) {
-  // res.end('file catcher example');
+var upload = multer({ dest: DIR });
+
+app.get(base_url + '/menu/poster/gulmohar', function (req, res, next) {
 
   GulmoharMenuImage.findOne(
     {
-      restraunt:"gulmohar"
-    }, 
-   (err,image) => {
-      if (err)
-      {
-        res.json({"error":err})
+      restraunt: "gulmohar"
+    },
+    (err, image) => {
+      if (err) {
+        res.json({ "error": err })
       }
 
-      res.setHeader('Content-Type','image/*');
+      res.setHeader('Content-Type', 'image/*');
 
-      fs.createReadStream(path.join(DIR, image.filename)).pipe(res)
+      fs.readFile(path.join(DIR, image.filename), function (err, data) {
+        if (err) {
+          next(err);
+        }
+        else {
+          res.send(data);
+        }
+      });
 
-      // res.sendFile(data)
     }
   )
-  
 
-  
-  
 });
- 
 
 
-app.post(base_url+'/menu/poster/gulmohar', upload.single('poster'), async function (req, res, next) {
-  // req.file is the `avatar` file
-  // req.body will hold the text fields, if there were any
 
+app.post(base_url + '/menu/poster/gulmohar', upload.single('poster'), async function (req, res, next) {
 
   const image = await GulmoharMenuImage.findOneAndUpdate(
-          {
-            restraunt:"gulmohar"
-    
-          },
-          {
-            filename:req.file.filename
-          },
-          {
-            upsert:true,
-            new:true,
-            setDefaultsOnInsert:true
-          }
-        )
-    
-    // console.log(image)
+    {
+      restraunt: "gulmohar"
 
-    res.status(200).json({
-      "result": "file uploaded"
-    })
-  
+    },
+    {
+      filename: req.file.filename
+    },
+    {
+      upsert: true,
+      new: true,
+      setDefaultsOnInsert: true
+    }
+  )
+
+  // console.log(image)
+
+  res.status(200).json({
+    "result": "file uploaded"
+  })
+
 });
