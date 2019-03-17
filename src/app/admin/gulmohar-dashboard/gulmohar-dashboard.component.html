@@ -1,0 +1,116 @@
+
+
+
+<div class="buttons has-addons is-right">
+  <span *ngIf="editItem || addItem" class="button" (click)="back()">Back</span>
+
+  <span class="button is-danger" (click)="logout()">Logout</span>
+</div>
+
+<div class="card">
+  <div  *ngIf="!editItem && !addItem" class="card-header">
+
+    <div class="card-header-title"> Add Menu Items </div>
+    <div style="margin-right: 2%; margin-top: 1%">
+      <button class="button is-info" type="button" (click)="add_item()">Add Item</button>
+
+    </div>
+
+  </div>
+  <div class="card-content">
+    <ul *ngIf="!editItem && !addItem" class="menu-list">
+      <li *ngFor="let item of menuItems"><a (click)="get_form(item._id)" >{{ item.category }} </a> 
+      </li>
+    </ul>
+
+
+    <div *ngIf="editItem || addItem" >
+        <!-- <pre>
+            {{menuItem | json}}
+          </pre> -->
+      <div class="field">
+        <div class="level">
+          <div *ngIf="editItem && !addItem" class="level-left">
+            <label class="label">Edit Item</label>
+          </div>
+          <div *ngIf="addItem && !editItem" class="level-left">
+            <label class="label">Add Item</label>
+          </div>
+          <div *ngIf="editItem && !addItem" class="level-right">
+            <button class="button is-info" type="button" (click)="edit()">Edit</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="field">
+        <label class="label">Category*</label>
+        <div class="control">
+          <input class="input black" type="text" [disabled]=readonly value="{{menuItem.category}}" [(ngModel)]="menuItem.category">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">List of Menu Items*</label>
+        <div class="control">
+          <textarea class="textarea" [disabled]=readonly value={{menuItem.menu}} [(ngModel)]="menuItem.menu"></textarea>
+        </div>
+      </div>
+
+      <div class="level">
+        <div class="level-left">
+          <div class="control">
+            <button class="button is-primary" [disabled]=readonly
+            (click)="editAllowed(menuItem)">Submit</button>
+          </div>
+        </div>
+        <div class="level-right">
+          <button class="button is-danger" type="button" (click)="delete_item(menuItem._id)">Delete</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- card content closed  -->
+  <div *ngIf="!addItem && !editItem" class="card">
+    <div class="card-header">
+        <div class="card-header-title"> Upload Poster</div>
+        </div>
+
+        <div class="card-content">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+              <div class="level">
+                <div class="level-left">
+                    <div class="form-group">
+                        <label for="poster">Image </label>
+                        <input type="file" id="poster" (change)="onFileChange($event)" #fileInput>
+                        <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>
+                      </div>
+                </div>
+                <div class="level-right">
+                    <div class="control">
+                        <button class="button is-primary btn btn-success" type="submit" [disabled]="form.invalid || loading">Submit<i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
+                      </div>
+                    <!-- <button type="submit" [disabled]="form.invalid || loading" class="btn btn-success">Submit <i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button> -->
+                </div>
+              </div>
+                            
+
+
+              </form>
+              <div *ngIf="showImage">
+                <!-- <pre>
+                  {{imageUrl}}
+                </pre> -->
+                  <img src={{imageUrl}} >
+              </div>
+        </div>
+
+      
+    </div>
+    <!-- <button (click)="editAllowed()" class="button">Edit</button> -->

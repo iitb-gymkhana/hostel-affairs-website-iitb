@@ -1,3 +1,8 @@
+<app-gulmohar-dashboard *ngIf="user_id === 'gulmohar'">
+</app-gulmohar-dashboard>
+
+<ng-container *ngIf="user_id !== 'gulmohar'">
+
 <div class="level">
   <div class="level-left"> 
     <button class="button is-dark" [disabled]="tab === tabs[0]" (click)="previous()">Previous</button>
@@ -214,3 +219,5 @@
     </footer>
   </div>
 </div>
+
+</ng-container>

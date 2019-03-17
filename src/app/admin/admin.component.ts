@@ -9,6 +9,9 @@ import { ApiService } from '../_services/api.service'
 })
 export class AdminComponent implements OnInit {
 
+  // helper = new JwtHelperService();
+  user_id: string;
+
   constructor(private fb: FormBuilder, private api: ApiService) { }
 
   tab: string
@@ -57,6 +60,8 @@ export class AdminComponent implements OnInit {
       operational_rating: [''],
       total_rating: ['']
     })
+  
+    this.user_id = this.api.get_user_id();
   }
 
   logout() {

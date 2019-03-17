@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router'
 import { environment } from '../../environments/environment';
 
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,6 +19,12 @@ export class ApiService {
   logout_user() {
     localStorage.removeItem('token')
     this.router.navigate(['/admin'])
+  }
+
+  get_user_id(){
+    const helper = new JwtHelperService();
+    const user_id = helper.decodeToken(localStorage.getItem('token'))['user_id']
+    return user_id;
   }
 
   loggedIn() {
