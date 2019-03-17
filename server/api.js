@@ -155,7 +155,8 @@ app.post(base_url + '/users/login', (req, res) => {
       }
       if (isMatch) {
         let payload = {
-          subject: data['_id']
+          subject: data['_id'],
+          user_id:data['user_id']
         }
         let token = jwt.sign(payload, SECRET_KEY)
         res.status(200).json({
@@ -833,50 +834,12 @@ app.delete(base_url+'/menu/gulmohar/:id', verifyToken,(req,res) => {
 
 // gulmohar menu image api
 
-// app.post(base_url+'/gulmohar_addimage',verifyToken, (req,res) => {
-//   var newImage = new GulmoharMenuImage();
-//   newImage.img.data = fs.readFileSync(req.files.userPhoto.path)
-//   newImage.img.contentType = 'image/png';
-//   newImage.save()
-//     .then(newImage => {
-//       console.log("menu Item added succesfully");
-//       res.json('Item added successfully')
-//     })
-//     .catch( err => {
-//       console.log("not saved");
-//       res.status(400).send("Unable to save item");
-//     });
-// })
 
-// app.get(base_url+'/gulmohar_getimage',verifyToken, (req,res) => {
-
-// })
 var DIR = './uploads/';
  
 var upload = multer({dest: DIR});
  
-// app.use(function (req, res, next) {
-//   // res.setHeader('Access-Control-Allow-Origin', 'http://valor-software.github.io');
-//   res.setHeader('Access-Control-Allow-Methods', 'POST');
-//   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-//   res.setHeader('Access-Control-Allow-Credentials', true);
-//   next();
-// });
- 
-// app.use(multer({
-//   dest: DIR,
-//   rename: function (fieldname, filename) {
-//     return filename + Date.now();
-//   },
-//   onFileUploadStart: function (file) {
-//     console.log(file.originalname + ' is starting ...');
-//   },
-//   onFileUploadComplete: function (file) {
-//     console.log(file.fieldname + ' uploaded to  ' + file.path);
-//   }
-// }
 
-// ),next());
  
 app.get(base_url+'/menu/poster/gulmohar', function (req, res) {
   // res.end('file catcher example');
@@ -904,32 +867,7 @@ app.get(base_url+'/menu/poster/gulmohar', function (req, res) {
   
 });
  
-// app.post('/menu/gulmohar/poster', function (req, res) {
-//   upload(req, res, function (err) {
-//     if (err) {
-//       return res.end(err.toString());
-//     }
 
-    
-//     const image = GulmoharMenuImage.findOneAndUpdate(
-//       {
-//         restraunt:"gulmohar"
-
-//       },
-//       {
-//         filename:req.file.filename
-//       },
-//       {
-//         upsert:true,
-//         new:true,
-//         setDefaultsOnInsert:true
-//       }
-//     )
-
- 
-//     res.end('File is uploaded');
-//   });
-// });
 
 app.post(base_url+'/menu/poster/gulmohar', upload.single('poster'), async function (req, res, next) {
   // req.file is the `avatar` file
@@ -953,6 +891,8 @@ app.post(base_url+'/menu/poster/gulmohar', upload.single('poster'), async functi
     
     // console.log(image)
 
-    res.end('File is uploaded');
+    res.status(200).json({
+      "result": "file uploaded"
+    })
   
 });
