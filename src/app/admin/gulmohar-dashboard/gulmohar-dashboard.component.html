@@ -103,6 +103,17 @@
 
 
               </form>
+              <div class="is-divider"></div>
+              <div *ngIf="previousUpload" class="field">
+                <div class="level">
+                  <div class="level-left">
+                    <label class="label">Previous Upload</label>
+                  </div>
+                  <div class="level-right">
+                    <button class="button is-info" type="button" (click)="delete_poster()">Delete</button>
+                  </div>
+                </div>
+              </div>
               <div *ngIf="showImage">
                 <!-- <pre>
                   {{imageUrl}}

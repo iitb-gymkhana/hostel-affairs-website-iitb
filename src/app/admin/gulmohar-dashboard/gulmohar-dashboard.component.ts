@@ -22,6 +22,7 @@ export class GulmoharDashboardComponent implements OnInit {
   imageUrl:String;
   showImage:Boolean;
   form: FormGroup;
+  previousUpload: Boolean;
   loading: boolean = false;
 
   @ViewChild('fileInput') fileInput: ElementRef;
@@ -34,9 +35,10 @@ export class GulmoharDashboardComponent implements OnInit {
     this.disable_submit = true
     this.addItem = false
     this.readonly = true
-    this.imageUrl=""
+    this.imageUrl = this.gulmoharApiService.get_poster_url() + '?' + new Date().getTime();
+    this.previousUpload = true;
     // console.log(this.editItem);
-    this.showImage=false;
+    this.showImage=true;
     this.imageUrl = this.gulmoharApiService.get_poster_url()
 
     this.gulmoharApiService.get_menu_items()
@@ -84,6 +86,7 @@ export class GulmoharDashboardComponent implements OnInit {
     setTimeout(() => {
       // FormData cannot be inspected (see "Key difference"), hence no need to log it here
       alert('Upload complete!');
+      this.previousUpload= true
       this.loading=false;
       this.imageUrl = this.gulmoharApiService.get_poster_url() + '?' + new Date().getTime();
       this.showImage=true 
@@ -186,5 +189,15 @@ export class GulmoharDashboardComponent implements OnInit {
       )
     
     }
+
+  delete_poster(){
+    this.gulmoharApiService.delete_poster()
+      .subscribe(
+        console.log,
+        console.log
+      )
+      this.previousUpload= false
+      this.showImage=false
+  }
   
 }

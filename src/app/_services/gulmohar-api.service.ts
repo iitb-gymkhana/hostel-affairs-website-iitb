@@ -48,4 +48,9 @@ export class GulmoharApiService {
   get_poster_url(){
     return `${this.base_url}/menu/poster/gulmohar`
   }
+
+  delete_poster(){
+    // console.log("hello")
+    return this.http.delete(`${this.base_url}/menu/poster/gulmohar`)
+  }
 }
