@@ -3,6 +3,20 @@ const Schema = mongoose.Schema
 const bcrypt = require('bcrypt')
 const SALT_WORK_FACTOR = 10
 
+// schema for gulmohar menu
+
+GulmoharMenuSchema = new Schema({
+    "menu": { type: String , required: true },
+    "category" : { type:String, index:true, required: true, unique:true},
+});
+
+ImageSchema = new Schema({
+    filename : {type:String,required:true},
+    restraunt :{type:String,required:true,default:'gulmohar'}
+});
+
+// Schema for hygiene commitee 
+
 FoodOutletSchema = new Schema({
     "name": { type: String, index: true, unique: true, required: true },
     "description": String,
@@ -63,6 +77,9 @@ UserSchema.methods.comparePassword = function (candidatePassword, call_back) {
     });
 };
 
+
+exports.GulmoharMenu = mongoose.model('GulmoharMenu',GulmoharMenuSchema)
+exports.GulmoharMenuImage =  mongoose.model('GulmoharMenuImage',ImageSchema)
 
 exports.FoodOutlet = mongoose.model('FoodOutlet', FoodOutletSchema)
 exports.FoodOutletMenu = mongoose.model('FoodOutletMenu', FoodOutletMenuSchema)

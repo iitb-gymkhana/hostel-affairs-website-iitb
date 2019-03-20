@@ -18,7 +18,7 @@ import { HygieneCommitteeComponent } from './hygiene-committee/hygiene-committee
 import { FoodOutletsComponent } from './food-outlets/food-outlets.component';
 import { SecurityGuidelinesComponent } from './security-guidelines/security-guidelines.component';
 import { AuthGuard } from './_guards/auth.guard'
-
+import {GulmoharMenuComponent} from './gulmohar-menu/gulmohar-menu.component';
 const routes: Routes = [
   {
     path: 'home',
@@ -194,6 +194,17 @@ const routes: Routes = [
       metatags: {
         description: '',
         keywords: 'eshuttle schedule, hostel affairs, iitb'
+      }
+    }
+  },
+  {
+    path: 'gulmoharmenu',
+    component: GulmoharMenuComponent,
+    data: {
+      title: 'Gulmohar Menu',
+      metatags: {
+        description: '',
+        keywords: 'gulmohar menu, hostel affairs, iitb'
       }
     }
   },
