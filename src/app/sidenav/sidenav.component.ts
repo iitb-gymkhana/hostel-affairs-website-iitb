@@ -25,7 +25,8 @@ export class SidenavComponent implements OnInit, AfterViewInit {
     { name: 'ReachUs Portal', url: 'https://gymkhana.iitb.ac.in/portal/reachus' },
     { name: 'Tenders', path: 'tenders' },
     { name: 'Hall Manager Duties', path: 'hallmanagerduties' },
-    { name: 'E-Shuttle Schedule', path: 'eshuttleschedule'}
+    { name: 'E-Shuttle Schedule', path: 'eshuttleschedule'},
+    { name: 'Gulmohar', path:'gulmoharmenu'}
   ];
 
   constructor() { }
