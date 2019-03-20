@@ -1,22 +1,63 @@
 <!-- -->
 
-  <div class="columns">
+
+
+<div class="content is-size-6">
+  <p>If you are looking for a restaurant in the campus. We have Gulmohar Restaurant in the 2nd Floor of Gulmohar
+    building which serves a wide range of varities. A standard Cafeteria is also located in the ground floor of Gulmohar
+    Building which serves a variety of fast food and snacks.
+  </p>
+
+  
+  <div class="columns is-multiline" style="padding-top:2rem;">
     <div class="column">
-      <div class="is-center menu-image" style="text-align: center;align-content: center;">
-        <img src="{{imageUrl}}" alt="">
-      </div>
+      <a class="button is-outlined is-info" target="_blank" href="/assets/gulmohar/Gulmohar-Menu-Card.pdf">
+        Gulmohar Restaurant Menu
+      </a>
+      <br>
+      <p>
+        Gulmohar Restaurant Timings:
+        <br>Afternoon: 12.30 PM to 3 PM
+        <br>Evening: 7.30 PM to 11 PM
+      </p>
+    </div>
+    
+  
+    <div class="column is-right">
+      <a class="button  is-outlined is-info" target="_blank"
+        href="/assets/gulmohar/Gulmohar-COFFEE-SHOP-MENU.pdf">
+        Gulmohar Cafeteria Menu
+      </a>
+      <p>
+          Gulmohar Cafeteria timings:<br>7 AM to 10 PM
+      </p>
     </div>
   </div>
-
-  <div class="content is-size-6">
-      <div *ngFor="let item of menuItems" >
-          <h6>{{item.category}}</h6>
-          <p style="white-space: pre;">
-              {{item.menu}}
-          </p>
-          <div class="is-divider" ></div>
-
+<!--  -->
+<p>
+    You can call and get delivered, Delivery timings 7.30 PM to 10.30 PM.
+    You can call the given phone numbers to place your order:<br>
+    022 25722222<br>
+    022 25722223<br>
+    Extension-2783.
+</p>
+<div class="is-divider"></div>
+    
+    <div class="columns">
+        <div class="column">
+          <div class="is-center menu-image" style="text-align: center;align-content: center;">
+            <img src="{{imageUrl}}" alt="">
+          </div>
+        </div>
       </div>
-      
-  </div>
+      <div *ngFor="let item of menuItems">
+        <h6>{{item.category}}</h6>
+        <p style="white-space: pre;">
+          {{item.menu}}
+        </p>
+        <div class="is-divider"></div>
+    
+      </div>
+
+</div>
   

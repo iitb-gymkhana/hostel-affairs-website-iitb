@@ -201,7 +201,7 @@ const routes: Routes = [
     path: 'gulmoharmenu',
     component: GulmoharMenuComponent,
     data: {
-      title: 'Gulmohar Menu',
+      title: 'Gulmohar',
       metatags: {
         description: '',
         keywords: 'gulmohar menu, hostel affairs, iitb'
