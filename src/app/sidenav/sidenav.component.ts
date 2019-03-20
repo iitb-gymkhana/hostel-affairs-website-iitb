@@ -22,6 +22,7 @@ export class SidenavComponent implements OnInit, AfterViewInit {
     { name: 'Guest Accomodation Booking System', path: 'guestaccomodation' },
     { name: 'Guest House Booking System', url: 'http://guesthouse.iitb.ac.in' },
     { name: 'SAC Room Booking Portal', url: 'https://gymkhana.iitb.ac.in/portal/sac' },
+    { name: 'ReachUs Portal', url: 'https://gymkhana.iitb.ac.in/portal/reachus' },
     { name: 'Tenders', path: 'tenders' },
     { name: 'Hall Manager Duties', path: 'hallmanagerduties' },
     { name: 'E-Shuttle Schedule', path: 'eshuttleschedule'}
