@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HaCouncilCardComponent implements OnInit {
   @Input() member: any;
+  @Input() councilYear: string;
 
   constructor() { }
 

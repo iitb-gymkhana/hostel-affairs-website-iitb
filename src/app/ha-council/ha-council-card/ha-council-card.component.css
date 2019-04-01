@@ -1,3 +1,7 @@
 .column {
     margin: 10px 0;
 }
+
+.image img {
+    border-radius: 50%;
+}
