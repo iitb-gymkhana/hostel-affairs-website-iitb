@@ -1,0 +1,29 @@
+<ng-http-loader></ng-http-loader>
+
+<div class="mobile-sidenav">
+  <app-sidenav></app-sidenav>
+</div>
+
+<section class="section ha-section">
+  <div class="columns">
+    <div class="column is-3 sidenav">
+      <app-sidenav></app-sidenav>
+    </div>
+    <div class="column ha-content">
+      <header>
+        <app-header></app-header>
+      </header>
+
+      <main>
+        <section class="section">
+          <router-outlet (activate)="onActivate($event)"></router-outlet>
+        </section>
+      </main>
+
+      <footer>
+        <app-footer></app-footer>
+      </footer>
+    </div>
+  </div>
+
+</section>

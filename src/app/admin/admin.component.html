@@ -1,0 +1,223 @@
+<app-gulmohar-dashboard *ngIf="user_id === 'gulmohar'">
+</app-gulmohar-dashboard>
+
+<ng-container *ngIf="user_id !== 'gulmohar'">
+
+<div class="level">
+  <div class="level-left"> 
+    <button class="button is-dark" [disabled]="tab === tabs[0]" (click)="previous()">Previous</button>
+  </div>
+  <div class="level-right">
+    <button class="button is-danger" (click)="logout()">Logout</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-header-title"> {{ FO_card_header }}</div>
+    <div style="margin-right: 2%; margin-top: 1%">
+      <button class="button is-info" type="button" *ngIf="tab === tabs[1]" (click)="add_item()">Add Item</button>
+    </div>
+  </div>
+
+  <div class="card-content">
+
+    <!-- models card-->
+    <ul *ngIf="tab === tabs[0]" class="menu-list">
+      <li><a (click)="get_data_list('menu')">Menu</a></li>
+      <li><a (click)="get_data_list('outlet')">Outlets</a></li>
+      <li><a (click)="get_data_list('rating')">Ratings</a></li>
+    </ul>
+
+    <!-- data card-->
+    <ul *ngIf="tab === tabs[1]" class="menu-list">
+      <li><a (click)="get_form(item._id)" *ngFor="let item of data_list">{{ item.display_name }}</a></li>
+    </ul>
+
+    <!-- menu form -->
+    <form *ngIf="tab === tabs[2]" [formGroup]="menu_form" (ngSubmit)="onSubmit()">
+      <div class="field">
+        <div class="level">
+          <div class="level-left">
+            <label class="label">_id*</label>
+          </div>
+          <div class="level-right">
+            <button class="button is-info" type="button" (click)="enable_controls(menu_form)">Edit</button>
+          </div>
+        </div>
+        <div class="control">
+          <input class="input" type="text" formControlName="_id">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Name*</label>
+        <div class="control">
+          <input class="input" type="text" formControlName="name">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Menu*</label>
+        <div class="control">
+          <textarea class="textarea" formControlName="menu"></textarea>
+        </div>
+      </div>
+
+      <div class="level">
+        <div class="level-left">
+          <div class="control">
+            <button class="button is-primary" type="submit" [disabled]="menu_form.invalid || disable_submit">Submit</button>
+          </div>
+        </div>
+        <div class="level-right">
+          <button class="button is-danger" type="button" (click)="delete_item(menu_form)">Delete</button>
+        </div>
+      </div>
+
+    </form>
+
+    <!-- outlet form -->
+    <form *ngIf="tab === tabs[3]" [formGroup]='outlet_form' (ngSubmit)="onSubmit()">
+      <div class="field">
+        <div class="level">
+          <div class="level-left">
+            <label class="label">_id*</label>
+          </div>
+          <div class="level-right">
+            <button class="button is-info" type="button" (click)="enable_controls(outlet_form)">Edit</button>
+          </div>
+        </div>
+        <div class="control">
+          <input class="input" type="text" formControlName="_id">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input" type="text" formControlName="name">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Description</label>
+        <div class="control">
+          <input class="input" type="text" formControlName="description">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">menu</label>
+        <div class="control">
+          <div class="select">
+            <select formControlName="menu_id">
+              <option *ngFor="let val of dropdown_data">{{ val.display_name }} ID: {{ val._id}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="level">
+        <div class="level-left">
+          <div class="control">
+            <button class="button is-primary" type="submit" [disabled]="outlet_form.invalid || disable_submit">Submit</button>
+          </div>
+        </div>
+        <div class="level-right">
+          <button class="button is-danger" type="button" (click)="delete_item(outlet_form)">Delete</button>
+        </div>
+      </div>
+
+    </form>
+
+
+    <!-- rating form -->
+    <form *ngIf="tab === tabs[4]" [formGroup]="rating_form" (ngSubmit)="onSubmit()">
+      <div class="field">
+        <div class="level">
+          <div class="level-left">
+            <label class="label">_id*</label>
+          </div>
+          <div class="level-right">
+            <button class="button is-info" type="button" (click)="enable_controls(rating_form)">Edit</button>
+          </div>
+        </div>
+        <div class="control">
+          <input class="input" type="text" formControlName="_id">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Visit Date (dd/mm/yyyy)</label>
+        <div class="control">
+          <input class="input" type="date" formControlName="visit_date">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Food Outlet</label>
+        <div class="control">
+          <div class="select">
+            <select formControlName="food_outlet_id">
+              <option *ngFor='let val of dropdown_data'> {{ val.display_name }} ID: {{val._id}} </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Food Rating</label>
+        <div class="control">
+          <input class="input" type="text" formControlName="food_rating">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Operational Rating</label>
+        <div class="control">
+          <input class="input" type="text" formControlName="operational_rating">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Total Rating</label>
+        <div class="control">
+          <input class="input" type="text" formControlName="total_rating">
+        </div>
+      </div>
+
+      <div class="level">
+        <div class="level-left">
+          <div class="control">
+            <button class="button is-primary" type="submit" [disabled]="rating_form.invalid || disable_submit">Submit</button>
+          </div>
+        </div>
+        <div class="level-right">
+          <button class="button is-danger" type="button" (click)="delete_item(rating_form)">Delete</button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<div class="modal" *ngIf="show_modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">{{ modal_data.header }}</p>
+      <button class="delete" aria-label="close" (click)="close_modal()"></button>
+    </header>
+    <section class="modal-card-body">
+        <p> {{ modal_data.body }}</p>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success" *ngIf="modal_data.show_btns" (click)="modal_submit('confirm', modal_data.delete_btn)">Confirm</button>
+      <button class="button is-warning" *ngIf="modal_data.show_btns" (click)="modal_submit('cancel', modal_data.delete_btn)">Cancel</button>
+    </footer>
+  </div>
+</div>
+
+</ng-container>

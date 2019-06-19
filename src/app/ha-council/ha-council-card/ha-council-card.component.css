@@ -1,0 +1,12 @@
+.column {
+    margin: 10px 0;
+}
+
+.image img {
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    max-width: 70vw;
+    max-height: 70vw;
+}

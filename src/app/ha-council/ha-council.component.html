@@ -1,0 +1,20 @@
+<div class="select">
+  <select [(ngModel)]="councilYear" #councilYearSelect name="councilYear">
+    <option *ngFor="let council of councils; let i = index" [value]="i">{{council.year}}</option>
+  </select>
+</div>
+
+<ng-container *ngFor="let post of councils[councilYear].council.posts">
+  <div *ngIf="post.members.length !== 0">
+    <div class="content is-small is-flex">
+      <h1 class="is-size-4">{{post.post}}</h1>
+    </div>
+
+    <div class="columns is-multiline">
+      <div *ngFor="let member of post.members" class="column is-12">
+        <app-ha-council-card [member]="member" [councilYear]="councils[councilYear].year"></app-ha-council-card>
+      </div>
+    </div>
+    <div class="is-divider" data-content=""></div>
+  </div>
+</ng-container>

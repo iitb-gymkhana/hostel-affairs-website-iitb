@@ -1,0 +1,39 @@
+<div class="columns">
+  <div
+    class="column is-8-mobile is-4-tablet is-5-desktop is-3-widescreen is-3-fullhd"
+  >
+    <figure class="image">
+      <img
+        class="council"
+        src="assets/ha-council/images/{{ councilYear }}/{{ member.image }}"
+        alt="{{ member.name }}"
+      />
+    </figure>
+  </div>
+  <div class="column"></div>
+  <div class="column is-6 is-12-mobile">
+    <div class="content is-size-6">
+      <p class="title">
+        <a href="{{ member.fb }}" target="_blank" class="has-text-primary">{{
+          member.name
+        }}</a>
+      </p>
+      <!-- <dl>
+        <dt class="has-text-weight-bold">Hostel</dt>
+        <dd class="is-marginless">{{ member.hostel }}</dd>
+      </dl> -->
+      <dl>
+        <dt class="has-text-weight-bold">Email</dt>
+        <dd class="is-marginless" *ngFor="let email of member.emails">
+          {{ email }}
+        </dd>
+      </dl>
+      <dl>
+        <dt class="has-text-weight-bold">Mobile Number</dt>
+        <dd class="is-marginless" *ngFor="let number of member.numbers">
+          {{ number }}
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>

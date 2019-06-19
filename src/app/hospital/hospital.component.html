@@ -1,0 +1,77 @@
+<div class="columns">
+  <div class="column">
+    <figure class="image">
+      <img src="assets/hospital/hospital1.JPG" class="hospital-image" alt="">
+    </figure>
+  </div>
+</div>
+
+<div class="columns is-multiline">
+  <div class="column">
+    <a class="button is-outlined is-primary" target="_blank" href="http://www.iitb.ac.in/hospital/index.html">
+      IITB Hospital Website
+    </a>
+  </div>
+  <div class="column">
+    <a class="button is-outlined is-primary" target="_blank" href="https://gymkhana.iitb.ac.in/HospitalFeedback/index.php">
+      Hospital Feedback
+    </a>
+  </div>
+  <div class="column">
+    <a class="button is-outlined is-info" target="_blank" href="https://gymkhana.iitb.ac.in/~hostels/Hospital_Guidebook.pdf">
+      Hospital Guidebook
+    </a>
+  </div>
+</div>
+
+<div class="content is-size-6">
+  <p>
+    Yes, we do have our very own IITB Hospital on the campus. In case you were living under the rocks and don't know where exactly it is, it’s beside our Convocation hall. IITB Hospital is a primary care hospital for medical treatment of students and staffs. All the bonafide students of the institute are entitled to free medical
+    attendance and treatment available in the Institute hospital.
+  </p>
+  <p>
+    There are 14 medical officers​ available for consultation and 30 Visiting​ specialists​ available for referral in
+    hospital. If any treatment is not available in institute hospital, a referral to any of the empanelled hospital in
+    Mumbai can be made by medical officers and the expenses of treatment can be reimbursed from the hospital
+  </p>
+  <p>
+    There is also a pharmacy at the hospital to get the medicines referred by a medical officer. Students can get
+    medicines from here for free.
+  </p>
+  <p>
+    Ambulance facility ​can be availed 24​X7 ​within the campus. For ambulance, you can call internal number 1110.
+  </p>
+  <p>
+    You can find all the rules and regulation of IITB Hospital in the <a href="https://gymkhana.iitb.ac.in/~hostels/Hospital_Guidebook.pdf"
+      target="_blank">Hospital Guidebook</a> present on Gymkhana website of Hostel Affairs.
+  </p>
+  <p>
+    We are also open to all your feedback to improve the current facilities in the hospital, we request you to provide
+    the hospital’s feedback for your every visit. You may find the <a href="https://gymkhana.iitb.ac.in/HospitalFeedback/index.php"
+      target="_blank">Online Feedback Form</a> on the Hostel Affairs website.
+  </p>
+  <div class="notification is-info">
+    <p>
+      IITB Hospital Helpdesk - 022 2576 7051
+    </p>
+  </div>
+
+
+  <div class="is-divider" data-content=""></div>
+
+  <div *ngFor="let post of posts">
+    <div class="content is-small is-flex">
+      <h1 class="is-size-4">{{post.post}}</h1>
+    </div>
+
+    <div class="columns is-multiline">
+      <div *ngFor="let member of post.members" class="column is-12">
+        <app-ha-council-card [member]="member" [councilYear]="post.year"></app-ha-council-card>
+      </div>
+    </div>
+    <div class="is-divider" data-content=""></div>
+  </div>
+
+  <div id="map" (click)="openGoogleMap()"></div>
+
+</div>

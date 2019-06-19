@@ -1,0 +1,21 @@
+.mobile-sidenav {
+  display: none;
+}
+
+.sidenav {
+  margin-right: 40px;
+}
+
+.ha-content {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.ha-section {
+  padding-bottom: 0;
+}

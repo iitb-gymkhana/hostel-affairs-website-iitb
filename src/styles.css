@@ -1,0 +1,25 @@
+/**
+ * These values will not show up in content, but can be 
+ * queried by JavaScript to know which breakpoint is active.
+ * Add or remove as many breakpoints as you like.
+ */
+@import '~css-star-rating/css/star-rating.min.css';
+
+ body:before {
+    content: "mobile";
+    display: none;
+    /* Prevent from displaying. */
+  }
+  
+  @media (min-width: 768px) {
+    body:before {
+      content: "tablet";
+    }
+  }
+  
+  @media (min-width: 1088px) {
+    body:before {
+      content: "desktop";
+    }
+  }
+  

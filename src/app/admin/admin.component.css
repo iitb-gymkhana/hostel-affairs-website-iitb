@@ -1,0 +1,18 @@
+/* The Modal (background) */
+.modal{
+    max-height: 85%;
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    /* margin-top: 5%;
+    margin-left: 30%;
+    padding-top: 5%; Location of the box */
+    margin: auto;
+    overflow: auto; /* Enable scroll if needed */
+    /*background-color: rgb(0,0,0); /* Fallback color */
+    /*background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-card {
+    max-height: 95%
+}

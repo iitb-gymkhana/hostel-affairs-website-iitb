@@ -1,0 +1,84 @@
+<div class="columns">
+  <div class="column">
+    <div class="content">
+      <blockquote>These ratings are subjected to visits by hygiene committee for all food outlets in institute.
+        Hygiene
+        committee without any influence and partial bias gives these ratings and makes sure the food quality and
+        hygiene in outlets is upto mark.</blockquote>
+      <a class="button is-primary" href="https://gymkhana.iitb.ac.in/feedback/eateries/" target="_blank">Student Eateries Feedback</a>
+    </div>
+  </div>
+</div>
+<div class="card grey-border" *ngFor="let outlet of food_outlets">
+  <div class="card-header">
+    <div class="card-header-title font-size-large">{{outlet.name}}</div>
+  </div>
+  <div class="card-content">
+    <star-rating [starType]="'svg'" [rating]="outlet.last_visit ? outlet.last_visit.total_rating : 0" labelText="Overall Rating" [readOnly]="true"></star-rating>
+  </div>
+  <div class="card-footer">
+    <a class="card-footer-item button is-dark zero-radius-border" (click)="show_modal('menu', outlet._id)">Menu</a>
+    <a class="card-footer-item button is-dark zero-radius-border" (click)="show_modal('ratings', outlet._id)">Visits</a>
+  </div>
+</div>
+
+
+<div class="modal" id="ratings_modal" *ngIf="display_ratings_modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Visits</p>
+        <button class="delete" aria-label="close" (click)="close_modal()"></button>
+      </header>
+      <section class="modal-card-body">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th>Visit Date</th>
+              <th>Food Quality rating</th>
+              <th>Operational rating</th>
+              <th>Total rating</th>
+            </tr>
+            <tr *ngFor="let rating of ratings">
+              <td>{{ rating.visit_date.split("T")[0] }}</td>
+              <td>{{ rating.food_rating }}/5</td>
+              <td>{{ rating.operational_rating }}/5</td>
+              <td>{{ rating.total_rating }}/5</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- <footer class="modal-card-foot">
+          <button class="button is-success">Save changes</button>
+          <button class="button">Cancel</button>
+        </footer> -->
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="menu_modal" *ngIf="display_menu_modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Menu</p>
+      <button class="delete" aria-label="close" (click)="close_modal()"></button>
+    </header>
+    <section class="modal-card-body">
+      <aside class="menu">
+        <div class="menu_container" *ngFor='let key of menu_keys; index as i'>
+          <p class="menu-label">
+            {{ key }}
+          </p>
+          <ul class="menu-list">
+            <li *ngFor='let item of menu_items[i]'><a>{{ item }}</a></li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+    <!-- <footer class="modal-card-foot">
+        <button class="button is-success">Save changes</button>
+        <button class="button">Cancel</button>
+      </footer> -->
+  </div>
+</div>

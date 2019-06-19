@@ -1,0 +1,35 @@
+
+<div class="columns">
+  
+  <div class="column is-4 is-7-mobile is-4-tablet is-4-desktop is-4-widescreen is-3-fullhd">
+    <figure class="image">
+      <img src="assets/hostels/images/{{hostel.image}}" alt="{{hostel.name}}">
+    </figure>
+  </div>
+  <div class="column"></div>
+  <div class="column is-6 is-12-mobile">
+    <div class="content is-size-6">
+      <p class="title">
+        <a href="{{hostel.url}}" target="_blank" class="has-text-primary">{{hostel.hostel}}</a>
+      </p>
+      <dl *ngIf="hostel.phoneNo">
+        <dt class="has-text-weight-bold">Phone No.</dt>
+        <dd class="is-marginless">022-2576</dd>
+        <dd class="is-marginless">Security | Hall Manager</dd>
+        <dd class="is-marginless">{{ hostel.phoneNo }}</dd>
+      </dl>
+      <dl *ngIf="hostel.gsec">
+        <dt class="has-text-weight-bold">GSec</dt>
+        <dd class="is-marginless">{{ hostel.gsec }}</dd>
+      </dl>
+      <dl *ngIf="hostel.gsecPhoneNo">
+        <dt class="has-text-weight-bold">GSec's Number</dt>
+        <dd class="is-marginless">{{ hostel.gsecPhoneNo }}</dd>
+      </dl>
+      <dl *ngIf="hostel.gsecEmail">
+        <dt class="has-text-weight-bold">GSec's Email</dt>
+        <dd class="is-marginless">{{ hostel.gsecEmail }}</dd>
+      </dl>
+    </div>
+  </div>
+</div>
