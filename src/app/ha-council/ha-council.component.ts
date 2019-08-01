@@ -257,6 +257,16 @@ export class HaCouncilComponent implements OnInit {
         ]
       },
       {
+        post: 'Institute Girls Norm',
+        members: [
+          {
+            name: 'Snehal Dinesh Bhamare',
+            emails: ['sdbhamare1998@gmail.com'],
+            numbers: ['8689899231'],
+            image: 'Snehal.jpg'
+          },
+      }
+      {
         post: 'Institute System Administrators',
         members: [
           {
