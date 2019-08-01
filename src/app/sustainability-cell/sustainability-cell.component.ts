@@ -6,28 +6,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sustainability-cell.component.css']
 })
 export class SustainabilityCellComponent implements OnInit {
-  overallCoordinatorSustainableCell = [
+  head = [
     {
-      name: 'Aditya Devalla',
-      emails: ['devallaaditya456@gmail.com'],
-      numbers: ['7799323800', '8919254673'],
-      hostel: 'H9/228',
-      fb: 'https://www.facebook.com/aditya.devalla.90',
-      image: 'aditya.png',
+      name: 'Somansh Chordia',
+      emails: [''],
+      numbers: ['8208796190'],
+      image: 'Somansh.jpg',
+    },
+  ];
+  Manager = [
+    {
+      name: 'Aashish Tiwari',
+      emails: [''],
+      numbers: ['9404926797'],
+      image: 'Aashish.jpg',
     },
     {
-      name: 'Abhay Menon',
-      emails: ['s.abhaymenon@gmail.com'],
-      numbers: ['9769439840'],
-      hostel: 'H8/176',
-      fb: 'https://www.facebook.com/abhay.menon.71',
-      image: 'abhay.png',
+      name: 'Swagatika Priyambada',
+      emails: [''],
+      numbers: ['8118031363'],
+      image: 'Swagatika.jpg',
     }
   ];
-
   posts = [
-    { post: 'Overall Coordinator, Sustainable Cell',
-     members: this.overallCoordinatorSustainableCell 
+    { post: 'Head, Sustainable Cell',
+     members: this.head
+  },
+  { post: 'Manager, Sustainable Cell',
+  members: this.Manager
   }
   ];
 
