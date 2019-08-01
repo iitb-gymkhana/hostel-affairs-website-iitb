@@ -30,10 +30,10 @@ export class SustainabilityCellComponent implements OnInit {
   ];
   posts = [
     { post: 'Head, Sustainable Cell',
-     members: this.head
+     members: this.head, year: "19-20"
   },
   { post: 'Manager, Sustainable Cell',
-  members: this.Manager
+  members: this.Manager, year: "19-20"
   }
   ];
 

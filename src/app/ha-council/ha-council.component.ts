@@ -280,7 +280,7 @@ export class HaCouncilComponent implements OnInit {
             emails: ['mlc@iitb.ac.in', 'nautatva@iitb.ac.in'],
             numbers: ['8275269688'],
             image: 'nautatva.jpg',
-            fb: 'https://www.facebook.com/nautatva.navlakha'
+            fb: 'https://nautatva.github.io/'
           }
         ]
       }
