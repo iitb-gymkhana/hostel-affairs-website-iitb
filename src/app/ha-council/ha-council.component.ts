@@ -257,7 +257,7 @@ export class HaCouncilComponent implements OnInit {
         ]
       },
       {
-        post: 'Institute Girls Norm',
+        post: 'Institute Girls Nominee',
         members: [
           {
             name: 'Snehal Dinesh Bhamare',
@@ -265,7 +265,8 @@ export class HaCouncilComponent implements OnInit {
             numbers: ['8689899231'],
             image: 'Snehal.jpg'
           },
-      }
+	]
+      },
       {
         post: 'Institute System Administrators',
         members: [
