@@ -262,7 +262,7 @@ export class HaCouncilComponent implements OnInit {
           {
             name: 'Snehal Dinesh Bhamare',
             emails: ['sdbhamare1998@gmail.com'],
-            numbers: ['8689899231'],
+            numbers: [],
             image: 'Snehal.jpg'
           },
 	]
