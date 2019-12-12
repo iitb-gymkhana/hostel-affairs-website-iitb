@@ -29,7 +29,7 @@
         </dd>
       </dl>
       <dl>
-        <dt class="has-text-weight-bold">Mobile Number</dt>
+        <dt class="has-text-weight-bold" *ngIf="member.numbers.length > 0">Mobile Number</dt>
         <dd class="is-marginless" *ngFor="let number of member.numbers">
           {{ number }}
         </dd>
