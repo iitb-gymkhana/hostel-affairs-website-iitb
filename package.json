@@ -32,7 +32,7 @@
     "bulma-timeline": "^3.0.4",
     "core-js": "^2.6.9",
     "css-star-rating": "^1.2.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mapbox-gl": "^0.48.0",
     "ng-http-loader": "^5.1.0",
     "node-pre-gyp": "^0.13.0",
