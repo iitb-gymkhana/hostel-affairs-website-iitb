@@ -296,8 +296,8 @@ export class HaCouncilComponent implements OnInit {
         members: [
           {
             name: 'Mohd. Zakir Hussain',
-            emails: ['gsecha.iitb@gmail.com'],
-            numbers: ['9144880055'],
+            emails: ['gsecha@iitb.ac.in'],
+            numbers: [],
             fb: 'https://www.facebook.com/thezakirs',
             image: 'Zakir.jpg'
           }
