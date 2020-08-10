@@ -265,6 +265,7 @@ export class HaCouncilComponent implements OnInit {
             numbers: [],
             image: 'Snehal.jpg'
           },
+          // tslint:disable-next-line:indent
 	]
       },
       {
@@ -288,6 +289,120 @@ export class HaCouncilComponent implements OnInit {
     ]
   };
 
+  council20_21 = {
+    posts: [
+      {
+        post: 'General Secretary of Hostel Affairs (GSHA)',
+        members: [
+          {
+            name: 'Mohd. Zakir Hussain',
+            emails: ['gsecha.iitb@gmail.com'],
+            numbers: ['9144880055'],
+            fb: 'https://www.facebook.com/thezakirs',
+            image: 'Zakir.jpg'
+          }
+        ]
+      },
+      {
+        post: 'Institute Secretaries of Hostel Affairs (ISHAs)',
+        members: [
+          {
+            name: 'Arpit Gupta',
+            emails: ['arpit.gupta8k@gmail.com'],
+            numbers: ['8107214714'],
+            image: 'Arpit.jpeg'
+          },
+          {
+            name: 'Saket Mohta',
+            emails: ['saketmohta00@gmail.com'],
+            numbers: ['6204464585'],
+            image: 'Saket.jpg'
+          },
+          {
+            name: 'Anshul Kumar',
+            emails: ['anshul.kr2006@gmail.com'],
+            numbers: ['7424947811'],
+            image: 'anshul.jpg'
+          },
+          {
+            name: 'Gurpreet Singh Dhillon',
+            emails: ['gurpreetdhillon47@gmail.com '],
+            numbers: ['9464208257'],
+            image: 'Gurpreet.jpg'
+          }
+        ]
+      },
+      {
+        post: 'Overall Coordinator, Hygiene Committee',
+        members: [
+          {
+            name: 'Prem Sekhar Ponnada',
+            emails: ['hygienecommitteeociitb@gmail.com'],
+            numbers: ['8328503825'],
+            image: 'PREM.jpg'
+          },
+          {
+            name: 'Aditya Maitri',
+            emails: ['maitriaditya7@gmail.com'],
+            numbers: ['8310076793'],
+            image: 'Aditya Maitri.jpeg'
+          }
+        ]
+      },
+      {
+        post: 'Institute Secretary of International Relations',
+        members: [
+          {
+            name: 'Mrigi Munjal',
+            emails: ['mrigimunjal@gmail.com'],
+            numbers: ['9636566667'],
+            image: 'Mrigi.jpeg'
+          }
+        ]
+      },
+      // {
+      //   post: 'Institute Girls Nominee',
+      //   members: [
+      //     {
+      //       name: 'Snehal Dinesh Bhamare',
+      //       emails: ['sdbhamare1998@gmail.com'],
+      //       numbers: [],
+      //       image: 'Snehal.jpg'
+      //     },
+      //   ]
+      // },
+      {
+        post: 'Institute System Administrators',
+        members: [
+          {
+            name: 'Tezan Sahu',
+            emails: ['tezansahu@gmail.com'],
+            numbers: ['9022350789'],
+            image: 'Tezan.jpg'
+          },
+          {
+            name: 'Yashvardhan Didwania',
+            emails: ['ydidwania@iitb.ac.in '],
+            numbers: ['7021482388'],
+            image: 'yashvardhan.jpeg',
+            // fb: 'https://nautatva.github.io/'
+          }
+        ]
+      },
+      {
+        post: 'Web Nominee',
+        members: [
+          {
+            name: 'Mantri Krishna Sri Ipsit',
+            emails: ['webnominee.iitb@gmail.com'],
+            numbers: ['9987824796'],
+            image: 'Ipsit.jpg'
+          },
+        ]
+      },
+    ]
+  };
+
   councils = [
     {
       year: '18-19',
@@ -296,14 +411,15 @@ export class HaCouncilComponent implements OnInit {
     {
       year: '19-20',
       council: this.council19_20
-    }
+    },
+    {
+      year: '20-21',
+      council: this.council20_21
+    },
   ];
 
   // assuming above councils data is ordered by year
   councilYear = this.councils.length - 1;
-  
-  
-
   constructor() {}
 
   ngOnInit() {}
