@@ -358,12 +358,6 @@ export class HaCouncilComponent implements OnInit {
             numbers: ['7506274848'],
             image: 'Akshata.jpeg'
           },
-          {
-            name: 'Aditya Maitri',
-            emails: ['maitriaditya7@gmail.com'],
-            numbers: ['8310076793'],
-            image: 'Aditya Maitri.jpeg'
-          }
         ]
       },
       {
