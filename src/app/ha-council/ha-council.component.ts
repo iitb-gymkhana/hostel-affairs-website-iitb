@@ -316,7 +316,7 @@ export class HaCouncilComponent implements OnInit {
             name: 'Saket Mohta',
             emails: ['saketmohta00@gmail.com'],
             numbers: ['6204464585'],
-            image: 'Saket.jpg'
+            image: 'Saket.jpeg'
           },
           {
             name: 'Anshul Kumar',
@@ -350,11 +350,28 @@ export class HaCouncilComponent implements OnInit {
         ]
       },
       {
+        post: 'Overall Coordinator, Sustainability Cell',
+        members: [
+          {
+            name: 'Akshata Nagare',
+            emails: ['iitbsustainability@gmail.com'],
+            numbers: ['7506274848'],
+            image: 'Akshata.jpeg'
+          },
+          {
+            name: 'Aditya Maitri',
+            emails: ['maitriaditya7@gmail.com'],
+            numbers: ['8310076793'],
+            image: 'Aditya Maitri.jpeg'
+          }
+        ]
+      },
+      {
         post: 'Institute Secretary of International Relations',
         members: [
           {
             name: 'Mrigi Munjal',
-            emails: ['mrigimunjal@gmail.com'],
+            emails: ['isecir@iitb.ac.in'],
             numbers: ['9636566667'],
             image: 'Mrigi.jpeg'
           }
