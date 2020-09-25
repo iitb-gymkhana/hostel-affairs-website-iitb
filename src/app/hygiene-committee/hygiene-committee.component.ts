@@ -6,21 +6,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hygiene-committee.component.css']
 })
 export class HygieneCommitteeComponent implements OnInit {
-  
+
   overallCoordinatorHygieneCommittee = [
     {
-      name: 'Eva Judy',
-      emails: ['evajudy@iitb.ac.in'],
-      numbers: ['8518846450', '9769389629'],
-      image: 'eva.jpg',
+      name: 'Prem Sekhar Ponnada',
+      emails: ['hygienecommitteeociitb@gmail.com'],
+      numbers: ['8328503825'],
+      image: 'PREM.jpg'
     },
     {
-      name: 'Drish Mahnot',
-      emails: ['drish.sanghvi@gmail.com'],
-      numbers: ['7738869938', '7021381926'],
-      image: 'drish.jpg',
+      name: 'Aditya Maitri',
+      emails: ['maitriaditya7@gmail.com'],
+      numbers: ['8310076793'],
+      image: 'Aditya Maitri.jpeg'
     }
   ];
+
+  // overallCoordinatorHygieneCommittee = [
+  //   {
+  //     name: 'Eva Judy',
+  //     emails: ['evajudy@iitb.ac.in'],
+  //     numbers: ['8518846450', '9769389629'],
+  //     image: 'eva.jpg',
+  //   },
+  //   {
+  //     name: 'Drish Mahnot',
+  //     emails: ['drish.sanghvi@gmail.com'],
+  //     numbers: ['7738869938', '7021381926'],
+  //     image: 'drish.jpg',
+  //   }
+  // ];
 
   // memberHygieneCommittee = [
   //   {
@@ -74,7 +89,8 @@ export class HygieneCommitteeComponent implements OnInit {
   // ]
 
   posts = [
-    { post: 'Overall Coordinators, Hygiene Committee', members: this.overallCoordinatorHygieneCommittee, year: "19-20" }
+    { post: 'Overall Coordinators, Hygiene Committee', members: this.overallCoordinatorHygieneCommittee, year: '20-21' }
+    // { post: 'Overall Coordinators, Hygiene Committee', members: this.overallCoordinatorHygieneCommittee, year: "19-20" }
     // ,
     // { post: 'Members, Hygiene Committee', members: this.memberHygieneCommittee }
   ];

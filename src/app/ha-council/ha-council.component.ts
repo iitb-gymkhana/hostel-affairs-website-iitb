@@ -361,6 +361,17 @@ export class HaCouncilComponent implements OnInit {
         ]
       },
       {
+        post: 'Institute Girls Nominee',
+        members: [
+          {
+            name: 'Siddhi Nagre',
+            emails: ['nagresiddhi@gmail.com'],
+            numbers: ['9405809994'],
+            image: 'Siddhi.jpg'
+          }
+        ]
+      },
+      {
         post: 'Institute Secretary of International Relations',
         members: [
           {

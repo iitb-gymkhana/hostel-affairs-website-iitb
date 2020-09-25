@@ -7,12 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SustainabilityCellComponent implements OnInit {
   head = [
+    // {
+    //   name: 'Somansh Chordia',
+    //   emails: [''],
+    //   numbers: ['8208796190'],
+    //   image: 'Somansh.jpg',
+    // },
     {
-      name: 'Somansh Chordia',
-      emails: [''],
-      numbers: ['8208796190'],
-      image: 'Somansh.jpg',
-    },
+          name: 'Akshata Nagare',
+          emails: ['iitbsustainability@gmail.com'],
+          numbers: ['7506274848'],
+          image: 'Akshata.jpeg'
+        }
   ];
   Manager = [
     {
@@ -30,11 +36,13 @@ export class SustainabilityCellComponent implements OnInit {
   ];
   posts = [
     { post: 'Head, Sustainable Cell',
-     members: this.head, year: "19-20"
+     members: this.head,
+      // year: "19-20"
+      year: '20-21'
   },
-  { post: 'Manager, Sustainable Cell',
-  members: this.Manager, year: "19-20"
-  }
+  // { post: 'Manager, Sustainable Cell',
+  // members: this.Manager, year: "19-20"
+  // }
   ];
 
   constructor() { }
