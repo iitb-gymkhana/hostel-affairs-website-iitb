@@ -193,7 +193,7 @@ export class HaCouncilComponent implements OnInit {
           {
             name: 'Arbaj Ahmed Khilji',
             emails: ['gsecha.iitb@gmail.com'],
-            numbers: ['9987096721'],
+            numbers: [''],
             fb: 'https://www.facebook.com/arbajkhan7737',
             image: 'arbaj.jpg'
           }
@@ -205,7 +205,7 @@ export class HaCouncilComponent implements OnInit {
           {
             name: 'Mohd. Zakir Hussain',
             emails: ['mohdzakirhussain27@gmail.com'],
-            numbers: ['9144880055'],
+            numbers: [''],
             image: 'zakir.jpg'
           },
           {

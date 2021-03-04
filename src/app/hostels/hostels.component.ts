@@ -22,25 +22,25 @@ export class HostelsComponent implements OnInit {
       phoneNo: '2602 | 2702',
       gsec: 'Rajesh Thorve',
       gsecPhoneNo: '9518351175',
-      gsecEmail: 'gsech2.iitb@gmail.com ',
+      gsecEmail: 'gsech2@iitb.ac.in',
       image: '2.jpg',
       url: 'http://gymkhana.iitb.ac.in/~hostel2/'
     },
     {
       hostel: 'H3',
       phoneNo: '2603 | 2703',
-      gsec: '',
-      gsecPhoneNo: '',
-      gsecEmail: '',
+      gsec: 'Viren Haldwania',
+      gsecPhoneNo: '9462282385, 8949803620',
+      gsecEmail: 'gsech3@iitb.ac.in',
       image: '3.jpg',
       url: 'http://gymkhana.iitb.ac.in/~hostel3/'
     },
     {
       hostel: 'H4',
       phoneNo: '2604 | 2704',
-      gsec: 'Saurabh Rai',
-      gsecPhoneNo: '9757412792',
-      gsecEmail: 'mailsaurabhrai@gmail.com',
+      gsec: 'Saurav Raj',
+      gsecPhoneNo: '7400401293',
+      gsecEmail: 'saurav.rj1999@gmail.com',
       image: '4.jpg',
       url: 'http://gymkhana.iitb.ac.in/~hostel4/'
     },
@@ -49,7 +49,7 @@ export class HostelsComponent implements OnInit {
       phoneNo: '2605 | 2705',
       gsec: 'Kushagra Mundra',
       gsecPhoneNo: '9819288002',
-      gsecEmail: 'kushagramundra11@gmail.com',
+      gsecEmail: 'gsech5@iitb.ac.in',
       image: '5.jpg',
       url: 'http://gymkhana.iitb.ac.in/~hostel5/'
     },
@@ -58,51 +58,51 @@ export class HostelsComponent implements OnInit {
       phoneNo: '2606 | 2706',
       gsec: 'Prashant Chhaparwal',
       gsecPhoneNo: '7610060651',
-      gsecEmail: 'prashant000100@gmail.com',
+      gsecEmail: 'gsech6@iitb.ac.in',
       image: '6.jpg',
       url: 'http://gymkhana.iitb.ac.in/~hostel7/'
     },
-    {
-      hostel: 'H7',
-      phoneNo: '2607 | 2707',
-      gsec: 'Sanyam Chouksey',
-      gsecPhoneNo: '9407519666',
-      gsecEmail: 'sanyam.chouksey18@gmail.com',
-      image: '7.jpg',
-      url: 'http://gymkhana.iitb.ac.in/~hostel8/'
-    },
-    {
-      hostel: 'H8',
-      phoneNo: '2608 | 2708',
-      gsec: 'Abhisek Kumar',
-      gsecPhoneNo: '8763349049',
-      gsecEmail: 'avisekkumar027@gmail.com',
-      image: '8.jpg',
-      url: 'http://gymkhana.iitb.ac.in/~hostel9/'
-    },
+    // {
+    //   hostel: 'H7',
+    //   phoneNo: '2607 | 2707',
+    //   gsec: 'Sanyam Chouksey',
+    //   gsecPhoneNo: '9407519666',
+    //   gsecEmail: 'sanyam.chouksey18@gmail.com',
+    //   image: '7.jpg',
+    //   url: 'http://gymkhana.iitb.ac.in/~hostel8/'
+    // },
+    // {
+    //   hostel: 'H8',
+    //   phoneNo: '2608 | 2708',
+    //   gsec: 'Abhisek Kumar',
+    //   gsecPhoneNo: '8763349049',
+    //   gsecEmail: 'avisekkumar027@gmail.com',
+    //   image: '8.jpg',
+    //   url: 'http://gymkhana.iitb.ac.in/~hostel9/'
+    // },
     {
       hostel: 'H9',
       phoneNo: '2609 | 2709',
-      gsec: 'priyatham Peddinti',
+      gsec: 'Priyatham Peddinti',
       gsecPhoneNo: '7700901983',
-      gsecEmail: 'priyatham.peddinti@gmail.com',
+      gsecEmail: 'gsech9@iitb.ac.in',
       image: '9.jpg',
-      url: 'http://gymkhana.iitb.ac.in/~hostel10/'
+      url: 'http://gymkhana.iitb.ac.in/~hostel9/'
     },
     {
       hostel: 'H10',
       phoneNo: '2610 | 2710',
       gsec: 'Nisha Chhikara',
       gsecPhoneNo: '9899554899',
-      gsecEmail: 'gsecyh10@gmail.com',
+      gsecEmail: 'gsech10@iitb.ac.in',
       image: '10.jpg',
       url: 'http://gymkhana.iitb.ac.in/~hostel10/'
     },
     {
       hostel: 'H11',
       phoneNo: '2611 | 2711',
-      gsec: 'Tadar Sahi',
-      gsecPhoneNo: '8800627492',
+      gsec: 'Kamlika Gupta',
+      gsecPhoneNo: '9999218355',
       gsecEmail: 'gsech11@iitb.ac.in',
       image: '11.jpg',
       url: 'http://gymkhana.iitb.ac.in/~hostel11/'
@@ -128,17 +128,17 @@ export class HostelsComponent implements OnInit {
     {
       hostel: 'H14',
       phoneNo: '2614 | 2714',
-      gsec: 'Newton',
-      gsecPhoneNo: '9930742189',
-      gsecEmail: 'gsech14@iitb.ac.in, newton4050@gmail.com',
+      gsec: 'Rishabh Jaiswal',
+      gsecPhoneNo: '9935781312',
+      gsecEmail: 'gsech14@iitb.ac.in',
       image: '14.jpg',
       url: 'http://gymkhana.iitb.ac.in/~hostel14/'
     },
     {
       hostel: 'H15',
       phoneNo: '2715',
-      gsec: 'Samrat Sagar',
-      gsecPhoneNo: '7838836323',
+      gsec: 'Ashwini Bunkar',
+      gsecPhoneNo: '9967850204',
       gsecEmail: 'gsech15@iitb.ac.in',
       image: '15.jpg',
       url: 'http://gymkhana.iitb.ac.in/~hostel15/'
@@ -146,18 +146,27 @@ export class HostelsComponent implements OnInit {
     {
       hostel: 'H16',
       phoneNo: '2716',
-      gsec: 'Gulfan Khan',
-      gsecPhoneNo: '8882662838',
-      gsecEmail: 'g.k.25278@gmail.com',
+      gsec: 'Gurpreet Singh Dhillon',
+      gsecPhoneNo: '9464208257',
+      gsecEmail: 'gsech16@iitb.ac.in',
       image: '16.jpg',
       url: 'http://gymkhana.iitb.ac.in/~hostel16/'
     },
     {
+      hostel: 'H18',
+      phoneNo: '2618',
+      gsec: 'Nikhil Rodekar',
+      gsecPhoneNo: '8879651258',
+      gsecEmail: 'gsech18@iitb.ac.in',
+      image: '18.jpg',
+      url: 'http://gymkhana.iitb.ac.in/~hostel18/'
+    },
+    {
       hostel: 'Tansa',
       phoneNo: '2620 | 2720',
-      gsec: '',
-      gsecPhoneNo: '',
-      gsecEmail: '',
+      gsec: 'Vijendra Kumar Arya',
+      gsecPhoneNo: '8687491436',
+      gsecEmail: 'gsectansa@iitb.ac.in',
       image: 'tansa.png',
       url: 'http://gymkhana.iitb.ac.in/~tansa/'
     }
