@@ -425,6 +425,113 @@ export class HaCouncilComponent implements OnInit {
     ]
   };
 
+  council21_22 = {
+    posts: [
+      {
+        post: 'General Secretary of Hostel Affairs (GSHA)',
+        members: [
+          {
+            name: 'Saket Mohta',
+            emails: ['gsecha@iitb.ac.in'],
+            numbers: ['6204464585'],
+            fb: 'https://www.facebook.com/saket.mohta.7',
+            image: 'Saket.jpg'
+          }
+        ]
+      },
+      {
+        post: 'Institute Secretaries of Hostel Affairs (ISHAs)',
+        members: [
+          {
+            name: 'Ramineni Amith Varma',
+            emails: ['190050099@iitb.ac.in'],
+            numbers: ['9676463295'],
+            image: 'Amith.jpg'
+          },
+          {
+            name: 'Kartik Bachhav',
+            emails: ['190100062@iitb.ac.in'],
+            numbers: ['9577221212'],
+            image: 'Kartik.jpg'
+          },
+          {
+            name: 'Harjinder Singh Gill',
+            emails: ['190110025@iitb.ac.in'],
+            numbers: ['7837600106'],
+            image: 'Harry.jpg'
+          }
+        ]
+      },
+      // {
+      //   post: 'Overall Coordinator, Hygiene Committee',
+      //   members: [
+      //     {
+      //       name: 'Prem Sekhar Ponnada',
+      //       emails: ['hygienecommitteeociitb@gmail.com'],
+      //       numbers: ['8328503825'],
+      //       image: 'PREM.jpg'
+      //     },
+      //     {
+      //       name: 'Aditya Maitri',
+      //       emails: ['maitriaditya7@gmail.com'],
+      //       numbers: ['8310076793'],
+      //       image: 'Aditya Maitri.jpeg'
+      //     }
+      //   ]
+      // },
+      // {
+      //   post: 'Overall Coordinator, Sustainability Cell',
+      //   members: [
+      //     {
+      //       name: 'Akshata Nagare',
+      //       emails: ['iitbsustainability@gmail.com'],
+      //       numbers: ['7506274848'],
+      //       image: 'Akshata.jpeg'
+      //     },
+      //   ]
+      // },
+      {
+        post: 'Institute Girls\' Nominee',
+        members: [
+          {
+            name: 'Ishita Gupta',
+            emails: ['18b080012@iitb.ac.in'],
+            numbers: ['8112294342'],
+            image: 'Ishita.jpg'
+          }
+        ]
+      },
+      {
+        post: 'Institute System Administrators',
+        members: [
+          {
+            name: 'Rishabh Arya',
+            emails: ['rishabharya@iitb.ac.in'],
+            numbers: ['8209551718'],
+            image: 'Rishabh.jpg'
+          },
+          {
+            name: 'Sudhanshu Sahil',
+            emails: ['180100115@iitb.ac.in'],
+            numbers: ['7667557469'],
+            image: 'Sudhanshu.jpg'
+          }
+        ]
+      },
+      {
+        post: 'Web Nominee',
+        members: [
+          {
+            name: 'Ayush Jangir',
+            emails: ['webnominee.iitb@gmail.com'],
+            numbers: ['8696923282'],
+            image: 'Ayush.jpg'
+          },
+        ]
+      },
+    ]
+  };
+
   councils = [
     {
       year: '18-19',
@@ -438,6 +545,10 @@ export class HaCouncilComponent implements OnInit {
       year: '20-21',
       council: this.council20_21
     },
+    {
+      year: '21-22',
+      council: this.council21_22
+    }
   ];
 
   // assuming above councils data is ordered by year
