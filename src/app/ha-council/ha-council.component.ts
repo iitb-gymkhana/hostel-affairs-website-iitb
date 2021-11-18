@@ -459,6 +459,12 @@ export class HaCouncilComponent implements OnInit {
             emails: ['190110025@iitb.ac.in'],
             numbers: ['7837600106'],
             image: 'Harry.jpg'
+          },
+          {
+            name: 'Gurpreet Singh Dhillon',
+            emails: ['gurpreetdhillon47@gmail.com '],
+            numbers: ['9464208257'],
+            image: 'Gurpreet.jpg'
           }
         ]
       },
@@ -514,7 +520,7 @@ export class HaCouncilComponent implements OnInit {
             name: 'Sudhanshu Sahil',
             emails: ['180100115@iitb.ac.in'],
             numbers: ['7667557469'],
-            image: 'Sudhanshu.jpg'
+            image: 'sudhanshu.jpeg'
           }
         ]
       },
