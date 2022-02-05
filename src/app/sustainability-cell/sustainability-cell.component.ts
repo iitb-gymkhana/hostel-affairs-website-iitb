@@ -48,6 +48,7 @@ export class SustainabilityCellComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.location.assign('https://gymkhana.iitb.ac.in/sustainabilitycell/');
   }
 
 }
