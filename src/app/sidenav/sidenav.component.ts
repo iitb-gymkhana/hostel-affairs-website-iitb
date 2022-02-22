@@ -15,7 +15,7 @@ export class SidenavComponent implements OnInit, AfterViewInit {
     { name: 'International Relations', path: 'ir' },
     { name: 'Hospital', path: 'hospital' },
     { name: 'Security Guidelines', path: 'security' },
-    { name: 'Sustainability Cell', path: 'sustainabilitycell' },
+    { name: 'Sustainability Cell', url: 'https://gymkhana.iitb.ac.in/sustainabilitycell/' },
     { name: 'Hygiene Committee', path: 'hygienecommittee' },
     { name: 'Food Outlet Ratings', path: 'foodoutlets' },
     { name: 'Hostels', path: 'hostels' },
